@@ -40,6 +40,7 @@ namespace ZShop.Controllers
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
                 if (user != null)
                 {
+                   
                     await Authenticate(model.Password, model.Email); // аутентификация
 
                     return RedirectToAction("Index", "Home");
@@ -64,7 +65,7 @@ namespace ZShop.Controllers
                 if (user == null)
                 {
                     // добавляем пользователя в бд
-                    await _userService.CreateAsync(new User { Email = model.Email, Password = model.Password, Name = model.Name });
+                    await _userService.CreateAsync(new User { Email = model.Email, Password = model.Password, Name = model.Name, Role = "User", Phone = model.Phone });
                     //_context.Users.Add(new User { Email = model.Email, Password = model.Password, Name= model.Name });
 
 
@@ -87,6 +88,7 @@ namespace ZShop.Controllers
             {
                new Claim(ClaimTypes.Email, email),
                new Claim(ClaimTypes.Name, name),
+                new Claim(ClaimTypes.Role, user.Role),
                new Claim("Id", user.Id.ToString())
             };
 

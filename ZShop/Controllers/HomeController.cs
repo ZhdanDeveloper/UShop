@@ -20,7 +20,7 @@ namespace ZShop.Controllers
             _logger = logger;
         }
 
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
             return View();
