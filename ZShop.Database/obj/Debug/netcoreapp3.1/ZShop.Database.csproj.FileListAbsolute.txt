@@ -1,0 +1,6 @@
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Database\bin\Debug\netcoreapp3.1\ZShop.Database.deps.json
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Database\bin\Debug\netcoreapp3.1\ZShop.Database.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Database\obj\Debug\netcoreapp3.1\ZShop.Database.AssemblyInfoInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Database\obj\Debug\netcoreapp3.1\ZShop.Database.AssemblyInfo.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Database\obj\Debug\netcoreapp3.1\ZShop.Database.csprojAssemblyReference.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Database\bin\Debug\netcoreapp3.1\ZShop.Domain.dll

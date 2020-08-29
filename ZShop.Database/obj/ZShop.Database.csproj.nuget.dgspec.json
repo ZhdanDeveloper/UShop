@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj": {}
+    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Database\\ZShop.Database.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj": {
+    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Database\\ZShop.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj",
-        "projectName": "ZShop",
-        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Database\\ZShop.Database.csproj",
+        "projectName": "ZShop.Database",
+        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Database\\ZShop.Database.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Database\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.Build.Tasks.Core": {
+              "target": "Package",
+              "version": "[16.6.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -48,9 +62,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

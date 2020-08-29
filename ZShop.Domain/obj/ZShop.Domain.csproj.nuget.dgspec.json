@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj": {}
+    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Domain\\ZShop.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj": {
+    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Domain\\ZShop.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj",
-        "projectName": "ZShop",
-        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Domain\\ZShop.Domain.csproj",
+        "projectName": "ZShop.Domain",
+        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Domain\\ZShop.Domain.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -48,9 +48,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
