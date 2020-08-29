@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {}
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
         "projectName": "ZShop.Persistence",
-        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -79,8 +79,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj"
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj"
               }
             }
           }
@@ -128,14 +128,14 @@
         }
       }
     },
-    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj",
         "projectName": "ZShop.Services",
-        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -151,11 +151,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj"
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj"
               },
-              "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
-                "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj"
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj"
               }
             }
           }

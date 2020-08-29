@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "giQf76M4xGkIyWCeyWY4DYPSWxzcwOl9uSI1vhW3iaLWSzXSFWUkrY5t1yf+RoBkyDDANgu625xKwd6eQ/3pTA==",
+  "dgSpecHash": "Rmrmu59iLOaWxwLskHoyQu9DlIYW6xIFMx+FDhkmImoSDatchdONvis5TlzugO6X5DMpznsYMhGafWOORE8XZw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

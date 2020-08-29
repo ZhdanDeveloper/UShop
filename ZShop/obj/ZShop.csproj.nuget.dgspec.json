@@ -4,14 +4,14 @@
     "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
         "projectName": "ZShop.Persistence",
-        "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -79,8 +79,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\Entities\\Entities.csproj"
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj"
               }
             }
           }
@@ -128,6 +128,65 @@
         }
       }
     },
+    "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj",
+        "projectName": "ZShop.Services",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj",
+        "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj"
+              },
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop\\ZShop.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -153,6 +212,9 @@
             "projectReferences": {
               "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj"
+              },
+              "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj"
               }
             }
           }
@@ -171,6 +233,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.4, )"
             }
           },
           "imports": [

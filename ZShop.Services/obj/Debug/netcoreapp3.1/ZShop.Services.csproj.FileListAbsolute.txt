@@ -1,0 +1,14 @@
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ZShop.Services.deps.json
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ZShop.Services.dll
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ZShop.Services.pdb
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ZShop.Persistence.dll
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ZShop.Persistence.pdb
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.csprojAssemblyReference.cache
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.AssemblyInfoInputs.cache
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.AssemblyInfo.cs
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.csproj.CopyComplete
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.dll
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.pdb

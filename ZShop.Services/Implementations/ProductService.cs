@@ -8,7 +8,7 @@ using ZShop.Services.Interfaces;
 
 namespace ZShop.Services.Implementations
 {
-    class ProductService : IProductService
+    public class ProductService : IProductService
     {
         private readonly ZShopContext _context;
         public ProductService(ZShopContext context)
