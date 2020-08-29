@@ -38,15 +38,9 @@ namespace ZShop.Controllers
             if (ModelState.IsValid)
             {
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
-                if (user != null && user.Role =="Admin")
+                if (user != null)
                 {
-                    await AuthenticateAsAdmin(model.Password, model.Email); // аутентификация
-
-                    return RedirectToAction("Index", "Home");
-                }
-                if (user != null && user.Role == null)
-                {
-                    await AuthenticateAsAdmin(model.Password, model.Email); // аутентификация
+                    await Authenticate(model.Password, model.Email); // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -74,9 +68,9 @@ namespace ZShop.Controllers
                     //_context.Users.Add(new User { Email = model.Email, Password = model.Password, Name= model.Name });
 
 
-                  
+                    await Authenticate(model.Password, model.Email); // аутентификация
 
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                     ModelState.AddModelError("", "incorrect data");
@@ -93,25 +87,6 @@ namespace ZShop.Controllers
             {
                new Claim(ClaimTypes.Email, email),
                new Claim(ClaimTypes.Name, name),
-               new Claim(ClaimTypes.Role,"User"),
-               new Claim("Id", user.Id.ToString())
-            };
-
-            ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
-
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
-        }
-
-        private async Task AuthenticateAsAdmin(string password, string email)
-        {
-
-            User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
-            string name = user.Name;
-            var claims = new List<Claim>
-            {
-               new Claim(ClaimTypes.Email, email),
-               new Claim(ClaimTypes.Name, name),
-               new Claim(ClaimTypes.Role,"Admin"),
                new Claim("Id", user.Id.ToString())
             };
 
@@ -125,7 +100,6 @@ namespace ZShop.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return RedirectToAction("Login", "Account");
         }
-
 
 
     }
