@@ -1,0 +1,106 @@
+﻿@model ZShop.Models.Account.ProductViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card">
+    <div class="card-body">
+
+
+        <form method="post" enctype="multipart/form-data" asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="Price"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="Price" class="form-control" placeholder="Цена" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+                
+                   
+               
+                <div class="form-group col-md-3" style="margin-left: 150px;">
+                    <label asp-for="Category">Категория</label>
+                    <select class="form-control" id="single_select" asp-for="Category">
+                        <option value="Бензопилы">Бензопилы</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label asp-for="Name"></label>
+                </div>
+                <div class="form-group col-md-3">
+                    <input asp-for="Name" class="form-control" placeholder="Название..." />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-3">
+
+                    <label asp-for="Description">Описание</label>
+
+                    <textarea name="Description" id="Description"
+                              rows="5" cols="40"
+                              data-val-required="The Description field is required."
+                              data-val-maxlength-max="5000"
+                              data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
+                              data-val="true" asp-for="Description">
+
+                    </textarea>
+                </div>
+                <div class="col-md-2"></div>
+                
+                <div class="form-group col-md-3" style="margin-left: 150px;" >
+                    <label asp-for="ImageUrl">Фото</label>
+                    <div class="btn btn-primary btn-icon-text">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <input asp-for="ImageUrl" type="file" value="Upload" />
+                        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+
+                <button type="submit" class="btn btn-rounded btn-primary float-left"><i class="fas fa-plus-square" style="margin-right:0.7em"></i>Save</button>
+                <a asp-action="index" class="btn btn-rounded btn-success float-right"><i class="fas fa-caret-square-left" style="margin-right:0.7em"></i>Back</a>
+                <br />
+                <br />
+                <br />
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    $('#data_source_single').multiselect({
+    onInitialized: function(select, container) {
+    container.multiselect('dataprovider', options2);
+    container.multiselect('setOptions', {
+    nonSelectedText: 'Select a pooch...',
+    enableFiltering: true,
+    filterBehavior: 'both',
+    enableCaseInsensitiveFiltering: true,
+    templates: {
+    li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>',
+    filter: '<li class="multiselect-item filter"><div class="input-group m-0 mb-1"><input class="form-control multiselect-search" type="text"></div></li>',
+    filterClearBtn: '<div class="input-group-append"><button class="btn btn btn-outline-secondary multiselect-clear-filter" type="button"><i class="fa fa-close"></i></button></div>'
+    },
+    selectedClass: 'bg-light',
+    });
+    container.multiselect('rebuild');
+    $('input[type=radio]').addClass('d-none');
+    }
+    });
+
+</script>

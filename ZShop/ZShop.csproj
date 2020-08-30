@@ -17,4 +17,8 @@
     <ProjectReference Include="..\ZShop.Services\ZShop.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\prods\" />
+  </ItemGroup>
+
 </Project>

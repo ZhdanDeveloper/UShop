@@ -156,3 +156,6 @@ C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplica
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminPanel.cshtml.g.cs
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs

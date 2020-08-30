@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "BgfK9NNv4cevYSAoMwElyj/v73vPsswfHveR4VJphbC/C6R36H9xkCv8LTmrLxSGEjf2lBgZL+teUDWco3ITIw==",
+  "dgSpecHash": "PbCFEej4EAzuxNtrt/qImy9VW11uisimFPCWMPcBXI/sI2LTtT3Ib9nHTsmAYd98Wioe4v290apuALPQfdApFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.7\\microsoft.aspnetcore.http.features.3.1.7.nupkg.sha512",
+    "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.7\\microsoft.extensions.primitives.3.1.7.nupkg.sha512",
+    "C:\\Users\\Zhdan\\.nuget\\packages\\system.io.pipelines\\4.7.1\\system.io.pipelines.4.7.1.nupkg.sha512"
+  ],
   "logs": []
 }
