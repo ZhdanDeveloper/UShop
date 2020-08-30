@@ -18,8 +18,7 @@ namespace ZShop.Controllers
     [Route("Admin")]
     public class AdminController : Controller
     {
-        private readonly IProductService _productService;
-        private readonly ZShopContext dbContext;
+        private readonly IProductService _productService;  
         private readonly IWebHostEnvironment webHostEnvironment;
         public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment)
         {
@@ -39,8 +38,8 @@ namespace ZShop.Controllers
         [HttpGet("Create")]
         public IActionResult Create()
         {
-            var model = new ProductViewModel();
-            return View(model);
+           // var model = new ProductViewModel();
+            return View();
         }
         [Authorize(Roles = "Admin")]
         [HttpPost("Create")]
