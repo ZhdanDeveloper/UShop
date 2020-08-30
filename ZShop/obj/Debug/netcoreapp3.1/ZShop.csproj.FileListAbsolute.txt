@@ -155,3 +155,4 @@ C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.csproj.Cor
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminPanel.cshtml.g.cs

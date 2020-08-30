@@ -10,7 +10,7 @@ using ZShop.Models;
 
 namespace ZShop.Controllers
 {
-    [Authorize]
+        
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,7 +20,7 @@ namespace ZShop.Controllers
             _logger = logger;
         }
 
-        [Authorize(Roles ="Admin")]
+   
         public IActionResult Index()
         {
             return View();
