@@ -55,10 +55,7 @@ namespace ZShop.Services.Implementations
             throw new NotImplementedException();
         }
 
-        IEnumerable<User> IUserService.GetAll()
-        {
-            throw new NotImplementedException();
-        }
+   
 
         User IUserService.GetById(int UserId)
         {

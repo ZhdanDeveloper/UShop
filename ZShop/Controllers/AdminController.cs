@@ -38,7 +38,7 @@ namespace ZShop.Controllers
         [HttpGet("Create")]
         public IActionResult Create()
         {
-           // var model = new ProductViewModel();
+          
             return View();
         }
         [Authorize(Roles = "Admin")]
@@ -57,7 +57,7 @@ namespace ZShop.Controllers
                     Price = model.Price
 
                 };
-                if (model.ImageUrl != null && model.ImageUrl.Length > 0)
+                if (model.ImageUrl != null && model.ImageUrl.Length > 0 && model.ImageUrlShowCase != null && model.ImageUrlShowCase.Length >0)
                 {
                     var uploadDir = @"images/prods";
                     var fileName = Path.GetFileNameWithoutExtension(model.ImageUrl.FileName);
@@ -67,6 +67,19 @@ namespace ZShop.Controllers
                     var path = Path.Combine(webRootPath, uploadDir, fileName);
                     await model.ImageUrl.CopyToAsync(new FileStream(path, FileMode.Create));
                     product.ImageUrl = "/" + uploadDir + "/" + fileName;
+
+
+
+                    var uploadDirSC = @"images/showcase";
+                    var fileNameSC = Path.GetFileNameWithoutExtension(model.ImageUrlShowCase.FileName);
+                    var extensionSC = Path.GetExtension(model.ImageUrlShowCase.FileName);
+                    var webRootPathSC = webHostEnvironment.WebRootPath;
+                    fileNameSC = DateTime.UtcNow.ToString("yymmssfff") + fileNameSC + extensionSC;
+                    var pathSC = Path.Combine(webRootPathSC, uploadDirSC, fileNameSC);
+                    await model.ImageUrlShowCase.CopyToAsync(new FileStream(pathSC, FileMode.Create));
+                    product.ImageUrlShowCase = "/" + uploadDirSC + "/" + fileNameSC;
+
+
                 }
                 await _productService.CreateAsync(product);
                 return RedirectToAction("Index", "Home");

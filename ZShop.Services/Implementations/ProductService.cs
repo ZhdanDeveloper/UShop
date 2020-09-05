@@ -1,6 +1,9 @@
 ﻿using Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 using ZShop.Persistence;
@@ -28,10 +31,21 @@ namespace ZShop.Services.Implementations
             await _context.SaveChangesAsync();
         }
 
+        public IEnumerable<Product> GetAll()
+        {
+            return _context.products.ToList();
+        }
+
         public async Task UpdateAsync(Product product)
         {
             _context.Update(product);
             await _context.SaveChangesAsync();
         }
+        public Product GetById(int Id)
+        {
+            return _context.products.Where(e => e.Id == Id).FirstOrDefault();
+        }
+
+
     }
 }

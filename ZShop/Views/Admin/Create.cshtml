@@ -56,13 +56,22 @@
                     </textarea>
                 </div>
                 <div class="col-md-2"></div>
-                
-                <div class="form-group col-md-3" style="margin-left: 150px;" >
+
+                <div class="form-group col-md-3" style="margin-left: 150px;">
                     <label asp-for="ImageUrl">Фото</label>
                     <div class="btn btn-primary btn-icon-text">
                         <i class="fas fa-cloud-upload-alt"></i>
                         <input asp-for="ImageUrl" type="file" value="Upload" />
                         <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group col-md-3" style="margin-left: 150px;">
+                    <label asp-for="ImageUrlShowCase">Фото размер(350x260)</label>
+                    <div class="btn btn-primary btn-icon-text">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <input asp-for="ImageUrlShowCase" type="file" value="Upload" />
+                        <span asp-validation-for="ImageUrlShowCase" class="text-danger"></span>
                     </div>
                 </div>
             </div>

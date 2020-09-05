@@ -88,7 +88,7 @@ namespace ZShop.Controllers
             {
                new Claim(ClaimTypes.Email, email),
                new Claim(ClaimTypes.Name, name),
-                new Claim(ClaimTypes.Role, user.Role),
+               new Claim(ClaimTypes.Role, user.Role),
                new Claim("Id", user.Id.ToString())
             };
 

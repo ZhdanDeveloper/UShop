@@ -33,6 +33,7 @@ namespace ZShop
           .AddCookie(options => //CookieAuthenticationOptions
           {
               options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+              
 
           });
             string connection = Configuration.GetConnectionString("DefaultConnection");
@@ -40,6 +41,7 @@ namespace ZShop
             services.AddControllersWithViews();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
+           
             services.AddAuthorization();
         }
 
