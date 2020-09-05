@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using ZShop.Persistence;
 using ZShop.Services.Interfaces;
 using ZShop.Services.Implementations;
+using ZShop.Models;
 
 namespace ZShop
 {
@@ -38,9 +39,14 @@ namespace ZShop
           });
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ZShopContext>(options => options.UseSqlServer(connection));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShopCart.GetCart(sp));
             services.AddControllersWithViews();
+            services.AddMemoryCache();
+            services.AddSession();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
+            
            
             services.AddAuthorization();
         }
@@ -66,6 +72,7 @@ namespace ZShop
             app.UseCookiePolicy();
 
             app.UseStaticFiles();
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthentication();

@@ -1,0 +1,9 @@
+C:\Users\Zhdan\source\repos\ZShop\Helpers\obj\Debug\netcoreapp3.1\Helpers.csprojAssemblyReference.cache
+C:\Users\Zhdan\source\repos\ZShop\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfoInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\Helpers\obj\Debug\netcoreapp3.1\Helpers.AssemblyInfo.cs
+C:\Users\Zhdan\source\repos\ZShop\Helpers\obj\Debug\netcoreapp3.1\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\Helpers\bin\Debug\netcoreapp3.1\Helpers.deps.json
+C:\Users\Zhdan\source\repos\ZShop\Helpers\bin\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\Zhdan\source\repos\ZShop\Helpers\bin\Debug\netcoreapp3.1\Helpers.pdb
+C:\Users\Zhdan\source\repos\ZShop\Helpers\obj\Debug\netcoreapp3.1\Helpers.dll
+C:\Users\Zhdan\source\repos\ZShop\Helpers\obj\Debug\netcoreapp3.1\Helpers.pdb

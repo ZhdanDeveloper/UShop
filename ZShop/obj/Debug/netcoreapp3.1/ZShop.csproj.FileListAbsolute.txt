@@ -151,8 +151,6 @@ C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ru\Microsoft.Cod
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.csproj.CoreCompileInputs.cache
-C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\AdminPanel.cshtml.g.cs
@@ -160,3 +158,6 @@ C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNet
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Create.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\ViewProduct.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\ShopCart\Index.cshtml.g.cs

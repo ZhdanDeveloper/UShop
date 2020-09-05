@@ -43,7 +43,7 @@ namespace ZShop.Services.Implementations
         }
         public Product GetById(int Id)
         {
-            return _context.products.Where(e => e.Id == Id).FirstOrDefault();
+            return _context.products.FirstOrDefault(x=>x.Id==Id);
         }
 
 
