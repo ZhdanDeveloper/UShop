@@ -20,8 +20,11 @@ namespace ZShop.Controllers
 
         public ViewResult Index()
         {
-           
+            var item = _productService.GetById(1);
+            _shopCart.AddToCart(item);
 
+            var items = _shopCart.GetItems();
+            _shopCart.ShopItemsList = items;
             var obj = new ShopCartViewModel
             {
                 shopCart = _shopCart

@@ -30,7 +30,7 @@ namespace ZShop.Controllers
    
         public IActionResult Index()
         {
-
+           
             var prods = _productService.GetAll();
             return View(prods);
             
