@@ -20,8 +20,7 @@ namespace ZShop.Controllers
 
         public ViewResult Index()
         {
-            var item = _productService.GetById(1);
-            _shopCart.AddToCart(item);
+      
 
             var items = _shopCart.GetItems();
             _shopCart.ShopItemsList = items;
@@ -38,9 +37,38 @@ namespace ZShop.Controllers
             var item = _productService.GetById(id);
             if (item != null)
             {
-                _shopCart.AddToCart(item);
+                _shopCart.AddToCart(item, 1);
             }
             return RedirectToAction("Index");
         }
+
+        public RedirectToActionResult RemoveFromCart(int id)
+        {
+            var item = _shopCart.GetItem(id);
+            if (item != null)
+            {
+                _shopCart.RemoveFromCart(item.Id);
+            }
+            return RedirectToAction("Index");
+        }
+
+
+        public RedirectToActionResult RemoveAmount(int id)
+        {
+            var item = _shopCart.GetItem(id);
+            if (item != null)
+            {
+                _shopCart.RemoveAmount(item.Id);
+            }
+            return RedirectToAction("Index");
+        }
+
+        public RedirectToActionResult ClearCart()
+        {
+            _shopCart.ClearCart();
+            return RedirectToAction("Index");
+        }
+        
+
     }
 }

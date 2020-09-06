@@ -199,7 +199,7 @@ Hover the image
                             </div>
                             <div class="separator clear-left">
                                 <p class="btn-add">
-                                    <i class="fa fa-shopping-cart"></i><a href="#" class="hidden-sm">Купить</a>
+                                    <i class="fa fa-shopping-cart"></i><a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id" class="hidden-sm">В корзину</a>
                                 </p>
                                 <p class="btn-details">
                                     <i class="fa fa-list"></i><a asp-action="ViewProduct" asp-route-id="@item.Id" class="hidden-sm">Осмотреть</a>

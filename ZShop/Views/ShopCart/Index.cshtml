@@ -4,63 +4,104 @@
     ViewData["Title"] = "Index";
 }
 
+@{decimal total = 0;
+
+    @foreach (var item in Model.shopCart.ShopItemsList)
+    {
+        total += item.amount * item.price;
+    }
+}
 
 
-
-<div class="container mb-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Available</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                   
-
-                    <tbody>
-                        @foreach (var item in Model.shopCart.ShopItemsList)
-                        {
+    <div class="container mb-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
                             <tr>
-                               <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
-                                <td>@item.Product.Name</td>
-                                <td>In stock</td>
-                                <td><input class="form-control" type="text" value="1" /></td>
-                                <td class="text-right">@item.price грн</td>
-                                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                                <th scope="col"> </th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Available</th>
+                                <th scope="col" class="text-center">Quantity</th>
+                                <th scope="col" class="text-right">Price</th>
+                                <th> </th>
                             </tr>
+                        </thead>
 
 
+                        <tbody>
+                            @foreach (var item in Model.shopCart.ShopItemsList)
+                            {
+                                <tr>
+                                    <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
+                                    <td>@item.Product.Name</td>
+                                    <td>In stock</td>
+
+
+
+                                    <td>
+                                        @*<input class="form-control" type="text" value="@item.amount" />*@
+                                        <div class="form-group">
+
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+
+                                                    <a asp-controller="ShopCart" asp-action="RemoveAmount" asp-route-id="@item.Id" class="quantity-left-minus btn btn-danger btn-number" type="submit">
+                                                        <i class="fa fa-minus"></i>
+                                                    </a>
+                                                </div>
+                                                <input type="text" class="form-control" id="quantity" name="quantity" min="1" max="100" value="@item.amount">
+                                                <div class="input-group-append">
+                                                    <a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Product.Id" class="quantity-right-plus btn btn-success btn-number" type="submit">
+                                                        <i class="fa fa-plus"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </td>
+
+
+
+                                    <td class="text-right">@item.price грн</td>
+                                    <td class="text-right">
+
+                                        <a asp-controller="ShopCart" asp-action="RemoveFromCart" asp-route-id="@item.Id" class="btn btn-sm btn-danger" type="submit">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+
+                                    </td>
+                                </tr>
+                            }
                             <tr>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
                                 <td><strong>Total</strong></td>
-                                <td class="text-right"><strong>346,90 €</strong></td>
+                                <td class="text-right"><strong>@total</strong></td>
                             </tr>
-                        }
-                    </tbody>
-                    
-                </table>
-            </div>
-        </div>
-        <div class="col mb-2">
-            <div class="row">
-                <div class="col-sm-12  col-md-6">
-                    <button class="btn btn-block btn-light">Continue Shopping</button>
+                        </tbody>
+
+                    </table>
                 </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+            </div>
+            <div class="col mb-2">
+                <div class="row">
+                    <div class="col-sm-12  col-md-6">
+                        <a class="btn btn-block btn-light" asp-controller="Home" asp-action="Index">
+                            Continue Shopping
+                        </a>
+
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                    </div>
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <a class="btn btn-lg btn-block btn btn-sm btn-danger text-uppercase" asp-controller="ShopCart" asp-action="ClearCart">Clear Cart</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-                   

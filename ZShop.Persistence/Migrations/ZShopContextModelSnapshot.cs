@@ -32,6 +32,9 @@ namespace ZShop.Persistence.Migrations
                     b.Property<string>("ShopCartId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("amount")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("price")
                         .HasColumnType("decimal(18,2)");
 

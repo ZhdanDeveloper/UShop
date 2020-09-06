@@ -19,12 +19,13 @@ namespace ZShop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
+        private readonly ShopCart _shopCart;
 
-        public HomeController(ILogger<HomeController> logger, IProductService productService)
+        public HomeController(ILogger<HomeController> logger, IProductService productService, ShopCart shopCart)
         {
             _logger = logger;
             _productService = productService;
-       
+            _shopCart = shopCart;
         }
 
    
@@ -47,8 +48,7 @@ namespace ZShop.Controllers
 
             return View(Product);
         }
-        [HttpPost("ViewProduct")]
-      
+       
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

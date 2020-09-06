@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "..\Entities\Ent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZShop.Services", "..\ZShop.Services\ZShop.Services.csproj", "{82F90406-6803-4889-8854-753197DB7032}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers", "..\Helpers\Helpers.csproj", "{552C186A-1750-4D37-B276-98D8A8BA66C1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{82F90406-6803-4889-8854-753197DB7032}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82F90406-6803-4889-8854-753197DB7032}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82F90406-6803-4889-8854-753197DB7032}.Release|Any CPU.Build.0 = Release|Any CPU
-		{552C186A-1750-4D37-B276-98D8A8BA66C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{552C186A-1750-4D37-B276-98D8A8BA66C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{552C186A-1750-4D37-B276-98D8A8BA66C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{552C186A-1750-4D37-B276-98D8A8BA66C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
