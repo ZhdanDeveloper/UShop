@@ -167,40 +167,48 @@
                         @Html.DisplayFor(x => x.Description)
                     </p>
                     <p class="card-text">
-                       
+
                     </p>
                 </div>
             </div>
         </div>
 
         <!-- Reviews -->
-       
-
-
-<!-- Footer -->
-
-
-
-<!-- Modal image -->
-<div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel">Product title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <img class="img-fluid" src="https://dummyimage.com/1200x1200/55595c/fff" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!-- Footer -->
+        <!-- Modal image -->
+        <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Product title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img class="img-fluid" src="https://dummyimage.com/1200x1200/55595c/fff" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "POST",
+            url: "/ShopCart/ClearCart",
+            data: "{}",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (msg) {
+                alert(msg.d);
+            }
+        });
+    });
+   </script>
+        <script>
     $(document).ready(function () {
         var quantity = 1;
 
@@ -219,4 +227,4 @@
         });
 
     });
-</script>
+        </script>

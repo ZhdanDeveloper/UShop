@@ -24,10 +24,24 @@ namespace ZShop.Models
 
         public static ShopCart GetCart(IServiceProvider services)
         {
-            ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+
+              
+
+            //ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
+          //  var context = services.GetService<ZShopContext>();
+          //  string shopCartId = cookieValueFromContext ?? Guid.NewGuid().ToString();
+          
+            //session.SetString("CartId", shopCartId);
+
+
+
+
+            string cookieValueFromContext = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Request.Cookies["shopCartId"];
+           //ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             var context = services.GetService<ZShopContext>();
-            string shopCartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
-            session.SetString("CartId", shopCartId);
+            string shopCartId = cookieValueFromContext ?? Guid.NewGuid().ToString();
+            services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Response.Cookies.Append("shopCartId", shopCartId);
+            //session.SetString("CartId", shopCartId);
             return new ShopCart(context) { ShopCartId = shopCartId };
         }
 

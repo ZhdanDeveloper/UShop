@@ -234,6 +234,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "IKVM": {
+              "target": "Package",
+              "version": "[8.1.5717, )"
+            },
             "Microsoft.AspNetCore.Http.Extensions": {
               "target": "Package",
               "version": "[2.2.0, )"

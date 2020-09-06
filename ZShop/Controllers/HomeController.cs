@@ -20,15 +20,12 @@ namespace ZShop.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
         private readonly ShopCart _shopCart;
-
         public HomeController(ILogger<HomeController> logger, IProductService productService, ShopCart shopCart)
         {
             _logger = logger;
             _productService = productService;
             _shopCart = shopCart;
         }
-
-   
         public IActionResult Index()
         {
            
@@ -36,7 +33,6 @@ namespace ZShop.Controllers
             return View(prods);
             
         }
-
         public IActionResult Privacy()
         {
             return View();
