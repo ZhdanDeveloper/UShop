@@ -1,4 +1,7 @@
-﻿@model IEnumerable<Entities.Product>
+﻿@model ReflectionIT.Mvc.Paging.PagingList<Entities.Product>
+@using ReflectionIT.Mvc.Paging
+@addTagHelper *,ReflectionIT.Mvc.Paging
+@*@model IEnumerable<Entities.Product>*@
 
 @{
     ViewData["Title"] = "Index";
@@ -172,45 +175,51 @@ Hover the image
     font-weight: bold;
 }
     </style>
-<tbody>
-    <div class="container" style="margin-top:50px;">
-        <div class="row">
-            @foreach (var item in Model)
-            {
+    <tbody>
+        
+        <div class="container" style="margin-top:0px; padding-bottom:100px;">
+            <div class="row">
+                @foreach (var item in Model)
+                {
 
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="col-item">
-                        <div class="post-img-content">
-                            <img src="@Html.DisplayFor(modelItem => item.ImageUrlShowCase)" class="img-responsive" />
-                            @*<span class="post-title">
+                    <div class="col-xs-12 col-sm-6 col-md-3" style="margin-top:20px;">
+                        <div class="col-item">
+                            <div class="post-img-content">
+                                <img src="@Html.DisplayFor(modelItem => item.ImageUrlShowCase)" class="img-responsive" />
+                                @*<span class="post-title">
                                     <b>@Html.DisplayFor(modelItem => item.)</b><br>
                                 </span>*@
-                            @*<span class="round-tag">-15%</span>*@
-                        </div>
-                        <div class="info">
-                            <div class="row">
-                                <div class="price col-md-6">
-                                    <h5>  @Html.DisplayFor(modelItem => item.Name)</h5>
-                                    <h5 class="price-text-color">@Html.DisplayFor(modelItem => item.Price)</h5>
+                                @*<span class="round-tag">-15%</span>*@
+                            </div>
+                            <div class="info">
+                                <div class="row">
+                                    <div class="price col-md-6">
+                                        <h5>  @Html.DisplayFor(modelItem => item.Name)</h5>
+                                        <h5 class="price-text-color">@Html.DisplayFor(modelItem => item.Price)</h5>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="separator clear-left">
-                                <p class="btn-add">
-                                    <i class="fa fa-shopping-cart"></i><a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id" class="hidden-sm">В корзину</a>
-                                </p>
-                                <p class="btn-details">
-                                    <i class="fa fa-list"></i><a asp-action="ViewProduct" asp-route-id="@item.Id" class="hidden-sm">Осмотреть</a>
-                                </p>
-                            </div>
-                            <div class="clearfix">
+                                <div class="separator clear-left">
+                                    <p class="btn-add">
+                                        <i class="fa fa-shopping-cart"></i><a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id" class="hidden-sm">В корзину</a>
+                                    </p>
+                                    <p class="btn-details">
+                                        <i class="fa fa-list"></i><a asp-action="ViewProduct" asp-route-id="@item.Id" class="hidden-sm">Осмотреть</a>
+                                    </p>
+                                </div>
+                                <div class="clearfix">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-             }
+                }
+            </div>
         </div>
-    </div>
-</tbody>
+
+
+        <nav class="pagenav" style="margin-bottom:100px; margin-left :500px;">
+            @await this.Component.InvokeAsync("Pager", new { PagingList = this.Model })
+        </nav>
+    </tbody>
 
 
 

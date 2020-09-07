@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.Logging;
+using ReflectionIT.Mvc.Paging;
 using ZShop.Models;
 using ZShop.Services.Interfaces;
 
@@ -26,11 +27,12 @@ namespace ZShop.Controllers
             _productService = productService;
             _shopCart = shopCart;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page = 1)
         {
            
             var prods = _productService.GetAll();
-            return View(prods);
+            var model = PagingList.Create(prods, 12, page);
+            return View(model);
             
         }
         public IActionResult Privacy()

@@ -128,7 +128,7 @@
             margin-left: 0;
             border: 0;
         }
-        }
+        
     </style>
 </head>
 <body>
@@ -146,7 +146,7 @@
             <!-- Collection of nav links, forms, and other content for toggling -->
             <div id="navbarCollapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Главная</a></li>
+                    <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
                     <li><a href="#">О нас</a></li>
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">Категории<b class="caret"></b></a>
@@ -179,12 +179,12 @@
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        
+
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Меню <span class="caret"></span></a>
                             <ul class="dropdown-menu" role="menu">
                                 <li><a asp-action="Index" asp-controller="ShopCart">Корзина</a></li>
-                                <li><a href="#">Личный кабинет</a></li>        
+                                <li><a href="#">Личный кабинет</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -199,6 +199,10 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a asp-action="Register" asp-controller="Account">Регистрация</a></li>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a asp-action="Index" asp-controller="ShopCart">Корзина</a></li>
+                    </ul>
+                    
 
                 }
 

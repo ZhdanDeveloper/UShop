@@ -33,9 +33,6 @@ namespace ZShop.Models
           
             //session.SetString("CartId", shopCartId);
 
-
-
-
             string cookieValueFromContext = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Request.Cookies["shopCartId"];
            //ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             var context = services.GetService<ZShopContext>();

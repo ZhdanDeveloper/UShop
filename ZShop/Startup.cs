@@ -15,6 +15,7 @@ using ZShop.Persistence;
 using ZShop.Services.Interfaces;
 using ZShop.Services.Implementations;
 using ZShop.Models;
+using ReflectionIT.Mvc.Paging;
 
 namespace ZShop
 {
@@ -46,8 +47,8 @@ namespace ZShop
             services.AddSession();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
-            
-           
+
+            services.AddPaging();
             services.AddAuthorization();
         }
 

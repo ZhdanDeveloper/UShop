@@ -187,5 +187,11 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\IKVM.OpenJDK.XML
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\IKVM.OpenJDK.XML.XPath.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\IKVM.Runtime.JNI.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\IKVM.Runtime.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.Views.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cache
