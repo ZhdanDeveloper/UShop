@@ -15,6 +15,7 @@ namespace ZShop.Services.Interfaces
         Task UpdateAsync(Product product);
         IEnumerable<Product> GetAll();
         Product GetById(int Id);
+        Task SaveAsync();
 
 
 

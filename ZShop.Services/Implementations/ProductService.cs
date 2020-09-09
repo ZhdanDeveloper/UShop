@@ -22,13 +22,13 @@ namespace ZShop.Services.Implementations
         public async Task CreateAsync(Product product)
         {
             await _context.products.AddAsync(product);
-            await _context.SaveChangesAsync();
+            await SaveAsync();
         }
 
         public async Task DeleteAsync(Product products)
         {
             _context.products.Remove(products);
-            await _context.SaveChangesAsync();
+            await SaveAsync();
         }
 
         public IEnumerable<Product> GetAll()
@@ -39,13 +39,16 @@ namespace ZShop.Services.Implementations
         public async Task UpdateAsync(Product product)
         {
             _context.Update(product);
-            await _context.SaveChangesAsync();
+            await SaveAsync();
         }
         public Product GetById(int Id)
         {
             return _context.products.FirstOrDefault(x=>x.Id==Id);
         }
 
-
+        public async Task SaveAsync()
+        {
+           await _context.SaveChangesAsync();
+        }
     }
 }

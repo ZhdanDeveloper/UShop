@@ -22,7 +22,7 @@ namespace ZShop.Controllers
         public ViewResult Index()
         {
       
-
+            
             var items = _shopCart.GetItems();
             _shopCart.ShopItemsList = items;
             var obj = new ShopCartViewModel
