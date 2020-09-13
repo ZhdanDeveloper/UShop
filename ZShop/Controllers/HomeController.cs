@@ -8,9 +8,11 @@ using Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ReflectionIT.Mvc.Paging;
 using ZShop.Models;
+using ZShop.Models.Pagination;
 using ZShop.Services.Interfaces;
 
 namespace ZShop.Controllers
@@ -27,12 +29,19 @@ namespace ZShop.Controllers
             _productService = productService;
             _shopCart = shopCart;
         }
-        public IActionResult Index(int page = 1)
+        public async Task<IActionResult> Index(int page = 1)
         {
-           
+            int pageSize = 2;
             var prods = _productService.GetAll();
-            var model = PagingList.Create(prods, 12, page);
-            return View(model);
+            var count = await prods.CountAsync();
+            var items = await prods.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
+            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
+            IndexViewModel viewModel = new IndexViewModel
+            {
+                PageViewModel = pageViewModel,
+                Users = items
+            };
+            return View(viewModel);
             
         }
         public IActionResult Privacy()

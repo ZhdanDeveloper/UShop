@@ -13,7 +13,7 @@ namespace ZShop.Services.Interfaces
         Task CreateAsync(Product products);
         Task DeleteAsync(Product products);
         Task UpdateAsync(Product product);
-        IEnumerable<Product> GetAll();
+        IQueryable<Product> GetAll();
         Product GetById(int Id);
         Task SaveAsync();
 

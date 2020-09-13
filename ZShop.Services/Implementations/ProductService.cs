@@ -31,9 +31,9 @@ namespace ZShop.Services.Implementations
             await SaveAsync();
         }
 
-        public IEnumerable<Product> GetAll()
+        public  IQueryable<Product> GetAll()
         {
-            return _context.products.ToList();
+            return _context.products;
         }
 
         public async Task UpdateAsync(Product product)
