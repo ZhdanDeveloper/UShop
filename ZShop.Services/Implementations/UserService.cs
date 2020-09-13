@@ -23,7 +23,7 @@ namespace ZShop.Services.Implementations
         public async Task CreateAsync(User newUser)
         {
             await _context.Users.AddAsync(newUser);
-            await _context.SaveChangesAsync();
+            await SaveAsync();
         }
         public User GetById(int userId)
         {
@@ -35,7 +35,7 @@ namespace ZShop.Services.Implementations
         {
             var user = GetById(userId);
             _context.Remove(user);
-            await _context.SaveChangesAsync();
+            await SaveAsync();
         }
         public async Task UpdateAsync(User user)
         {
@@ -47,7 +47,7 @@ namespace ZShop.Services.Implementations
         {
             var user = GetById(id);
             _context.Update(user);
-            await _context.SaveChangesAsync();
+            await SaveAsync();
         }
 
         public IEnumerable<User> GetAll()
@@ -60,6 +60,13 @@ namespace ZShop.Services.Implementations
         User IUserService.GetById(int UserId)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task SaveAsync()
+        {
+             
+             await _context.SaveChangesAsync();
+            
         }
     }
 }

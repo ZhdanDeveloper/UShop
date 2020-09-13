@@ -14,5 +14,6 @@ namespace ZShop.Services.Interfaces
         Task UpdateAsync(User user);
         Task UpdateAsync(int id);
         public User GetById(int UserId);
+        public Task SaveAsync();
     }
 }
