@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using javax.jws;
 using Microsoft.AspNetCore.Mvc;
+using ShopCartSpace;
 using ZShop.Models;
 using ZShop.Services.Interfaces;
 
@@ -21,8 +22,8 @@ namespace ZShop.Controllers
 
         public ViewResult Index()
         {
-      
-            
+
+            var ed = _shopCart.ShopCartId;
             var items = _shopCart.GetItems();
             _shopCart.ShopItemsList = items;
             var obj = new ShopCartViewModel

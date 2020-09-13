@@ -2999,6 +2999,21 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
+      "ShopCart/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
+          "ZShop.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopCart.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopCart.dll": {}
+        }
+      },
       "ZShop.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -3019,6 +3034,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Entities": "1.0.0",
+          "ShopCart": "1.0.0",
           "ZShop.Persistence": "1.0.0"
         },
         "compile": {
@@ -9409,6 +9425,11 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
+    "ShopCart/1.0.0": {
+      "type": "project",
+      "path": "../ShopCart/ShopCart.csproj",
+      "msbuildProject": "../ShopCart/ShopCart.csproj"
+    },
     "ZShop.Persistence/1.0.0": {
       "type": "project",
       "path": "../ZShop.Persistence/ZShop.Persistence.csproj",
@@ -9430,6 +9451,7 @@
       "Microsoft.Extensions.Caching.Memory >= 3.1.7",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
       "ReflectionIT.Mvc.Paging >= 4.0.0",
+      "ShopCart >= 1.0.0",
       "ZShop.Persistence >= 1.0.0",
       "ZShop.Services >= 1.0.0"
     ]
@@ -9460,6 +9482,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ShopCart\\ShopCart.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ShopCart\\ShopCart.csproj"
+            },
             "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
               "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj"
             },

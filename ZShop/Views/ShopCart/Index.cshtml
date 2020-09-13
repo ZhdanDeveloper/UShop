@@ -96,7 +96,10 @@
 
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                    <button class="btn btn-lg btn-block btn-success text-uppercase">Checkout</button>
+                   
+                    <a class="btn btn-lg btn-block btn-success text-uppercase" asp-controller="Order" asp-action="Index">
+                        Checkout
+                    </a>
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
                     <a class="btn btn-lg btn-block btn btn-sm btn-danger text-uppercase" asp-controller="ShopCart" asp-action="ClearCart">Clear Cart</a>

@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ShopCart\ShopCart.csproj" />
     <ProjectReference Include="..\ZShop.Persistence\ZShop.Persistence.csproj" />
     <ProjectReference Include="..\ZShop.Services\ZShop.Services.csproj" />
   </ItemGroup>

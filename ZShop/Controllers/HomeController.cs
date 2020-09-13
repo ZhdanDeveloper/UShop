@@ -11,6 +11,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using ReflectionIT.Mvc.Paging;
+using ShopCartSpace;
 using ZShop.Models;
 using ZShop.Models.Pagination;
 using ZShop.Services.Interfaces;

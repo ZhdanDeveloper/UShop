@@ -13,8 +13,10 @@ namespace Entities
         public string City { get; set; }
         public string PostOfiice { get; set; }
         public DateTime OrderTime { get; set; }
-        public Item Item { get; set; }
+        //public Item Item { get; set; }
         public int ItemId { get; set; }
+        public string ItemName { get; set; }
         public decimal price { get; set; }
+        public int Quantity { get; set; }
     }
 }

@@ -12,3 +12,5 @@ C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.S
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.csproj.CopyComplete
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.dll
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop.Services\obj\Debug\netcoreapp3.1\ZShop.Services.pdb
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ShopCart.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Services\bin\Debug\netcoreapp3.1\ShopCart.pdb

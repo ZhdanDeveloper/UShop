@@ -198,3 +198,6 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNet
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.csproj.CoreCompileInputs.cache
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ShopCart.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ShopCart.pdb
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Index.cshtml.g.cs
