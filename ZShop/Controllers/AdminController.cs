@@ -59,26 +59,10 @@ namespace ZShop.Controllers
                 };
                 if (model.ImageUrl != null && model.ImageUrl.Length > 0 && model.ImageUrlShowCase != null && model.ImageUrlShowCase.Length >0)
                 {
-                    var uploadDir = @"images/prods";
-                    var fileName = Path.GetFileNameWithoutExtension(model.ImageUrl.FileName);
-                    var extension = Path.GetExtension(model.ImageUrl.FileName);
-                    var webRootPath = webHostEnvironment.WebRootPath;
-                    fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
-                    var path = Path.Combine(webRootPath, uploadDir, fileName);
-                    await model.ImageUrl.CopyToAsync(new FileStream(path, FileMode.Create));
-                    product.ImageUrl = "/" + uploadDir + "/" + fileName;
 
-
-
-                    var uploadDirSC = @"images/showcase";
-                    var fileNameSC = Path.GetFileNameWithoutExtension(model.ImageUrlShowCase.FileName);
-                    var extensionSC = Path.GetExtension(model.ImageUrlShowCase.FileName);
-                    var webRootPathSC = webHostEnvironment.WebRootPath;
-                    fileNameSC = DateTime.UtcNow.ToString("yymmssfff") + fileNameSC + extensionSC;
-                    var pathSC = Path.Combine(webRootPathSC, uploadDirSC, fileNameSC);
-                    await model.ImageUrlShowCase.CopyToAsync(new FileStream(pathSC, FileMode.Create));
-                    product.ImageUrlShowCase = "/" + uploadDirSC + "/" + fileNameSC;
-
+                    product.ImageUrl = await UploadFile(@"images/prods", model.ImageUrl);
+                    product.ImageUrlShowCase = await UploadFile(@"images/showcase",  model.ImageUrlShowCase);
+                   
 
                 }
                 await _productService.CreateAsync(product);
@@ -87,7 +71,20 @@ namespace ZShop.Controllers
             return View();
         }
 
+        private async Task<string> UploadFile(string uploadDir, IFormFile ModelFileVarName)
+        {
 
+            
+            var fileName = Path.GetFileNameWithoutExtension(ModelFileVarName.FileName);
+            var extension = Path.GetExtension(ModelFileVarName.FileName);
+            var webRootPath = webHostEnvironment.WebRootPath;
+            fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
+            var path = Path.Combine(webRootPath, uploadDir, fileName);
+            await ModelFileVarName.CopyToAsync(new FileStream(path, FileMode.Create));
+            return "/" + uploadDir + "/" + fileName;
+
+
+        }
 
 
     }
