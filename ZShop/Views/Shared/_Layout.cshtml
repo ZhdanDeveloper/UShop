@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .form-control {
@@ -199,15 +198,15 @@
                 <ul class="nav navbar-nav navbar-right">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li><a href="#">Выйти</a></li>
+                        <li><a asp-action="Logout" asp-controller="Account">Выйти</a></li>
                         <li><a href="#">Личный кабинет</a></li>
-                        <li><a href="#">Корзина</a></li>
+                        <li><a asp-action="Index" asp-controller="ShopCart">Корзина</a></li>
 
                     }
                     else
                     {
-                     <li><a href="#">Войти</a></li>
-                     <li><a href="#">Регистрация</a></li>
+                     <li><a asp-action="Login" asp-controller="Account">Войти</a></li>
+                     <li><a asp-action="Register" asp-controller="Account">Регистрация</a></li>
                        
                     }
 

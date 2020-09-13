@@ -192,6 +192,9 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNet
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.Views.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ReflectionIT.Mvc.Paging.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Extensions.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.csproj.CoreCompileInputs.cache
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplicationPartsAssemblyInfo.cache

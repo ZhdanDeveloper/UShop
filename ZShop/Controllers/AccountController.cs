@@ -12,11 +12,16 @@ using Microsoft.EntityFrameworkCore;
 using ZShop.Models.Account;
 using ZShop.Persistence;
 using ZShop.Services.Interfaces;
+using Extensions;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+
 
 namespace ZShop.Controllers
 {
+    
     public class AccountController : Controller
     {
+        
         private IUserService _userService;
         private ZShopContext _context;
         public AccountController(IUserService userService, ZShopContext context)
@@ -37,11 +42,12 @@ namespace ZShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
-                if (user != null)
+                
+                User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
+                if (user != null && PasswordManager.VerifyPasswordHash(model.Password, user.Password))
                 {
                    
-                    await Authenticate(model.Password, model.Email); // аутентификация
+                    await Authenticate(model.Name); // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -61,15 +67,17 @@ namespace ZShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
+               
+                User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
                 if (user == null)
                 {
+                    var passwordHSH = PasswordManager.GeneratePasswordHash(model.Password);
                     // добавляем пользователя в бд
-                    await _userService.CreateAsync(new User { Email = model.Email, Password = model.Password, Name = model.Name, Role = "User", Phone = model.Phone });
+                    await _userService.CreateAsync(new User { Email = model.Email, Password = passwordHSH, Name = model.Name, Role = "User", Phone = model.Phone });
                     //_context.Users.Add(new User { Email = model.Email, Password = model.Password, Name= model.Name });
 
 
-                    await Authenticate(model.Password, model.Email); // аутентификация
+                    await Authenticate(model.Name); // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -79,15 +87,15 @@ namespace ZShop.Controllers
             return View(model);
         }
 
-        private async Task Authenticate(string password, string email)
+        private async Task Authenticate(string Name)
         {
 
-            User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
-            string name = user.Name;
+            User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == Name);
+           
             var claims = new List<Claim>
             {
-               new Claim(ClaimTypes.Email, email),
-               new Claim(ClaimTypes.Name, name),
+               new Claim(ClaimTypes.Email, user.Email),
+               new Claim(ClaimTypes.Name, user.Name),
                new Claim(ClaimTypes.Role, user.Role),
                new Claim("Id", user.Id.ToString())
             };

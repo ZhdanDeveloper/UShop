@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ZShop.Persistence;
 
 namespace ZShop.Persistence.Migrations
 {
     [DbContext(typeof(ZShopContext))]
-    partial class ZShopContextModelSnapshot : ModelSnapshot
+    [Migration("20200913112851_Added Configure for User")]
+    partial class AddedConfigureforUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

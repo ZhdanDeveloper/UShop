@@ -13,6 +13,12 @@ namespace ZShop.Persistence
         public DbSet<Product> products { get; set; }
         public DbSet<Item> items { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<User>()
+                .HasIndex(u => u.Name)
+                .IsUnique();
+        }
 
     }
 }

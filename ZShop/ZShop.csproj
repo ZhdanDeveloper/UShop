@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="IKVM" Version="8.1.5717" />
+    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.7">
@@ -15,6 +16,7 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.7" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
     <PackageReference Include="ReflectionIT.Mvc.Paging" Version="4.0.0" />
+ 
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +27,12 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\prods\" />
     <Folder Include="wwwroot\images\showcase\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Extensions">
+      <HintPath>..\Libraries\Extensions.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
