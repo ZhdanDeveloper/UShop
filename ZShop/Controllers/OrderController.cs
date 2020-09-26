@@ -35,6 +35,8 @@ namespace ZShop.Controllers
             if (ModelState.IsValid)
             {
                 await _orderService.CreateAsync(order);
+                _shopCart.ClearCart();
+
                 return RedirectToAction("Index", "Home");
             }
             return View(order);
