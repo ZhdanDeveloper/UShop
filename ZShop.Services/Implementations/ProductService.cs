@@ -50,5 +50,10 @@ namespace ZShop.Services.Implementations
         {
            await _context.SaveChangesAsync();
         }
+
+        public IQueryable<Product> GetListByName(string Name)
+        {
+            return _context.products.Where(x=>x.Name.Contains(Name));
+        }
     }
 }

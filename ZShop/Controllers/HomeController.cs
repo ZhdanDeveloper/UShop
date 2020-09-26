@@ -30,21 +30,37 @@ namespace ZShop.Controllers
             _productService = productService;
             _shopCart = shopCart;
         }
-        public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index(int? pageNumber = 1)
         {
-            int pageSize = 16;
+
             var prods = _productService.GetAll();
-            var count = await prods.CountAsync();
-            var items = await prods.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
-            PageViewModel pageViewModel = new PageViewModel(count, page, pageSize);
-            IndexViewModel viewModel = new IndexViewModel
-            {
-                PageViewModel = pageViewModel,
-                Users = items
-            };
-            return View(viewModel);
-            
+
+
+            int pageSize = 3;
+            return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
+
         }
+        public async Task<IActionResult> Search(string SearchString, int? pageNumber, string currentFilter)
+        {
+            
+
+            if (SearchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                SearchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = SearchString;
+
+            var prods = _productService.GetListByName(SearchString);
+
+            int pageSize = 3;
+            return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+        }
+
         public IActionResult Privacy()
         {
             return View();
