@@ -32,7 +32,7 @@ namespace ZShop.Controllers
         }
         public async Task<IActionResult> Index(int page = 1)
         {
-            int pageSize = 2;
+            int pageSize = 16;
             var prods = _productService.GetAll();
             var count = await prods.CountAsync();
             var items = await prods.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();

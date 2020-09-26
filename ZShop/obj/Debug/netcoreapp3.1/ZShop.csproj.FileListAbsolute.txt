@@ -201,3 +201,4 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.MvcApplica
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ShopCart.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ShopCart.pdb
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Index.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\ThankPage.cshtml.g.cs

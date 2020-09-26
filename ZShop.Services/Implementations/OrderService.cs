@@ -38,7 +38,8 @@ namespace ZShop.Services.Implementations
                     price = item.price,
                     Quantity = item.amount,
                     ItemName = item.Product.Name,
-                    OrderTime = time
+                    OrderTime = time,
+                    Region = order.Region
 
                 };
                  _context.orders.Add(Order);

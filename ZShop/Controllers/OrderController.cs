@@ -37,7 +37,7 @@ namespace ZShop.Controllers
                 await _orderService.CreateAsync(order);
                 _shopCart.ClearCart();
 
-                return RedirectToAction("Index", "Home");
+                return View("ThankPage");
             }
             return View(order);
         }
