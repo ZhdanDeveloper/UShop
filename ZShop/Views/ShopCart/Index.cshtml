@@ -21,10 +21,10 @@
                     <thead>
                         <tr>
                             <th scope="col"> </th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Available</th>
-                            <th scope="col" class="text-center">Quantity</th>
-                            <th scope="col" class="text-right">Price</th>
+                            <th scope="col">Продукт</th>
+                            <th scope="col">Наличие</th>
+                            <th scope="col" class="text-center">Кол-во</th>
+                            <th scope="col" class="text-right">Цена</th>
                             <th> </th>
                         </tr>
                     </thead>
@@ -36,7 +36,7 @@
                             <tr>
                                 <td><img src="https://dummyimage.com/50x50/55595c/fff" /> </td>
                                 <td>@item.Product.Name</td>
-                                <td>In stock</td>
+                                <td>В наличии</td>
 
 
 
@@ -48,13 +48,13 @@
                                             <div class="input-group-prepend">
 
                                                 <a asp-controller="ShopCart" asp-action="RemoveAmount" asp-route-id="@item.Id" class="quantity-left-minus btn btn-danger btn-number" type="submit">
-                                                    <i class="fa fa-minus"></i>
+                                                    <i class="fa fa-minus" ></i>
                                                 </a>
                                             </div>
-                                            <input type="text" class="form-control" id="quantity" name="quantity" min="1" max="100" value="@item.amount">
+                                            <input type="text" class="form-control" id="quantity" name="quantity" min="1" max="100" value="@item.amount" style="width:35px">
                                             <div class="input-group-append">
                                                 <a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Product.Id" class="quantity-right-plus btn btn-success btn-number" type="submit">
-                                                    <i class="fa fa-plus"></i>
+                                                    <i class="fa fa-plus" ></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -79,7 +79,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><strong>Total</strong></td>
+                            <td><strong>Итоговая цена</strong></td>
                             <td class="text-right"><strong>@total</strong></td>
                         </tr>
                     </tbody>
@@ -96,14 +96,33 @@
 
                 </div>
                 <div class="col-sm-12 col-md-6 text-right">
-                   
-                    <a class="btn btn-lg btn-block btn-success text-uppercase" asp-controller="Order" asp-action="Index">
-                        Checkout
-                    </a>
+                    @if (total == 0)
+                    {
+                        <button class="btn btn-lg btn-block btn-success text-uppercase" disabled>
+                            Купить
+                        </button>
+                    }
+                    else
+                    {
+                <a class="btn btn-lg btn-block btn-success text-uppercase" asp-controller="Order" asp-action="Index">
+                    Купить
+                </a>
+                    }
+
                 </div>
-                <div class="col-sm-12 col-md-6 text-right">
-                    <a class="btn btn-lg btn-block btn btn-sm btn-danger text-uppercase" asp-controller="ShopCart" asp-action="ClearCart">Clear Cart</a>
-                </div>
+                @if (total == 0)
+                {
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <button class="btn btn-lg btn-block btn btn-sm btn-danger text-uppercase" disabled>Очистить корзину</button>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-12 col-md-6 text-right">
+                        <a class="btn btn-lg btn-block btn btn-sm btn-danger text-uppercase" asp-controller="ShopCart" asp-action="ClearCart">Очистить корзину</a>
+                    </div>
+                }
+
             </div>
         </div>
     </div>

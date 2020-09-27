@@ -145,7 +145,7 @@
         <header>
             <nav class="navbar navbar-default navbar-expand-lg navbar-light">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Z<b>Shop</b></a>
+                    <a class="navbar-brand" asp-action="Index" asp-controller="Home">Z<b>Shop</b></a>
                     <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                         <span class="navbar-toggler-icon"></span>
                         <span class="icon-bar"></span>
@@ -156,20 +156,9 @@
                 <!-- Collection of nav links, forms, and other content for toggling -->
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li class="dropdown">
-                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Services <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Web Design</a></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Graphic Design</a></li>
-                                <li><a href="#">Digital Marketing</a></li>
-                            </ul>
-                        </li>
-                        <li class="active"><a href="#">Pricing</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">ГЛАВНАЯ</a></li>
+                        <li><a href="#">О НАС</a></li>
+                        <li><a href="#">кОНТАКТЫ</a></li>
                     </ul>
                     <form class="navbar-form form-inline search-form" asp-action="Search" asp-controller="Home" method="get">
                         <div class="input-group">
@@ -191,7 +180,7 @@
                         {
                             <li><a asp-action="Login" asp-controller="Account">Войти</a></li>
                             <li><a asp-action="Register" asp-controller="Account">Регистрация</a></li>
-
+                            <li><a asp-action="Index" asp-controller="ShopCart">Корзина</a></li>
                         }
 
                     </ul>
