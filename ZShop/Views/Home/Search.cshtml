@@ -6,270 +6,77 @@
 }
 
 
+<!DOCTYPE html>
+<html lang="en">
 <style>
-    body {
-        margin-top: 20px;
-        background: #f1f2f7;
-    }
-
-    /*panel*/
-    .panel {
-        border: none;
-        box-shadow: none;
-    }
-
-    .panel-heading {
-        border-color: #eff2f7;
-        font-size: 16px;
-        font-weight: 300;
-    }
-
-    .panel-title {
-        color: #2A3542;
-        font-size: 14px;
-        font-weight: 400;
-        margin-bottom: 0;
-        margin-top: 0;
-        font-family: 'Open Sans', sans-serif;
-    }
-
-
-    /*product list*/
-
-    .prod-cat li a {
-        border-bottom: 1px dashed #d9d9d9;
-    }
-
-    .prod-cat li a {
-        color: #3b3b3b;
-    }
-
-    .prod-cat li ul {
-        margin-left: 30px;
-    }
-
-        .prod-cat li ul li a {
-            border-bottom: none;
-        }
-
-            .prod-cat li ul li a:hover, .prod-cat li ul li a:focus, .prod-cat li ul li.active a, .prod-cat li a:hover, .prod-cat li a:focus, .prod-cat li a.active {
-                background: none;
-                color: #ff7261;
-            }
-
-    .pro-lab {
-        margin-right: 20px;
-        font-weight: normal;
-    }
-
-    .pro-sort {
-        padding-right: 20px;
-        float: left;
-    }
-
-    .pro-page-list {
-        margin: 5px 0 0 0;
-    }
-
-    .product-list img {
-        width: 100%;
-        border-radius: 4px 4px 0 0;
-        -webkit-border-radius: 4px 4px 0 0;
-    }
-
-    .product-list .pro-img-box {
-        position: relative;
-    }
-
-    .adtocart {
-        background: #fc5959;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        -webkit-border-radius: 50%;
-        color: #fff;
-        display: inline-block;
-        text-align: center;
-        border: 3px solid #fff;
-        left: 45%;
-        bottom: -25px;
-        position: absolute;
-    }
-
-        .adtocart i {
-            color: #fff;
-            font-size: 25px;
-            line-height: 42px;
-        }
-
-    .pro-title {
-        color: #5A5A5A;
-        display: inline-block;
-        margin-top: 20px;
-        font-size: 16px;
-    }
-
-    .product-list .price {
-        color: #fc5959;
-        font-size: 15px;
-    }
-
-    .pro-img-details {
-        margin-left: -15px;
-    }
-
-        .pro-img-details img {
-            width: 100%;
-        }
-
-    .pro-d-title {
-        font-size: 16px;
-        margin-top: 0;
-    }
-
-    .product_meta {
-        border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        padding: 10px 0;
-        margin: 15px 0;
-    }
-
-        .product_meta span {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .product_meta a, .pro-price {
-            color: #fc5959;
-        }
-
-    .pro-price, .amount-old {
-        font-size: 18px;
-        padding: 0 10px;
-    }
-
-    .amount-old {
-        text-decoration: line-through;
-    }
-
-    .quantity {
-        width: 120px;
-    }
-
-    .pro-img-list {
-        margin: 10px 0 0 -15px;
-        width: 100%;
-        display: inline-block;
-    }
-
-        .pro-img-list a {
-            float: left;
-            margin-right: 10px;
-            margin-bottom: 10px;
-        }
-
-    .pro-d-head {
-        font-size: 18px;
-        font-weight: 300;
+    a.disabled {
+        pointer-events: none;
+        cursor: default;
     }
 </style>
+<body>
 
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
-<div class="container bootdey">
-    <div class="col-md-3">
-        <section class="panel">
-            <header class="panel-heading">
-                Категории
-            </header>
-            <div class="panel-body">
-                <ul class="nav prod-cat">
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Категория1</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Категория2</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Категория3</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Категория4</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Категория5</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-angle-right"></i> Категория6</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
+    <!-- Navbar ================================================== -->
+    <!-- Header End====================================================================== -->
+    <div id="mainBody">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar ================================================== -->
+                <!-- Sidebar end=============================================== -->
+                <div class="span9">
+                    <ul class="breadcrumb">
+                        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+                        <li class="active">Products Name</li>
+                    </ul>
 
 
 
-    </div>
-    <div class="col-md-9">
-        <section class="panel">
-            <div class="panel-body">
-                <div class="pull-right">
-                    @{
-                        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-                        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-                    }
+                    <div class="tab-pane  active" id="blockView">
+                        <ul class="thumbnails">
 
-                    <a asp-action="Search"
-                       
-                       asp-route-pageNumber="@(Model.PageIndex - 1)"
-                       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-                       class="btn btn-default @prevDisabled">
-                        Previous
-                    </a>
-                    <a asp-action="Search"
-                    
-                       asp-route-pageNumber="@(Model.PageIndex + 1)"
-                       asp-route-currentFilter="@ViewData["CurrentFilter"]"
-                       class="btn btn-default @nextDisabled">
-                        Next
-                    </a>
+                            @foreach (var item in Model)
+                            {
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a asp-action="ViewProduct" asp-route-id="@item.Id"><img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" alt="" /></a>
+                                        <div class="caption">
+                                           <a asp-action="ViewProduct" asp-route-id="@item.Id"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
+                                            <p>
+                                                I'm a paragraph. Click here
+                                            </p>
+                                            <h4 style="text-align:center"><a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                        <hr class="soft" />
+                    </div>
                 </div>
+
+                @{
+                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                }
+
+                <a asp-action="Search"
+                   asp-route-pageNumber="@(Model.PageIndex - 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="btn btn-default @prevDisabled">
+                    Previous
+                </a>
+                <a asp-action="Search"
+                   asp-route-pageNumber="@(Model.PageIndex + 1)"
+                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                   class="btn btn-default @nextDisabled">
+                    Next
+                </a>
+
+                <br class="clr" />
             </div>
-        </section>
-
-        <div class="row product-list">
-            @foreach (var item in Model)
-            {
-
-
-
-                <div class="col-md-4">
-                    <section class="panel">
-                        <div class="pro-img-box">
-                            <img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" alt="" />
-                            <a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id" class="adtocart">
-                                <i class="fa fa-shopping-cart"></i>
-                            </a>
-                        </div>
-
-                        <div class="panel-body text-center">
-                            <h4>
-                                <a asp-action="ViewProduct" asp-route-id="@item.Id" class="pro-title">
-                                    @Html.DisplayFor(x => item.Name)
-                                </a>
-                            </h4>
-                            <p class="price">@Html.DisplayFor(x => item.Price)</p>
-                        </div>
-                    </section>
-                </div>
-            }
         </div>
     </div>
-</div>
+    </div>
 
-
-
-
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-</div>
+</body>
+</html>
