@@ -13,7 +13,7 @@
 }
 
 
-<div class="container mb-4">
+@*<div class="container mb-4">
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
@@ -41,7 +41,7 @@
 
 
                                 <td>
-                                    @*<input class="form-control" type="text" value="@item.amount" />*@
+                                    
                                     <div class="form-group">
 
                                         <div class="input-group mb-3">
@@ -126,4 +126,52 @@
             </div>
         </div>
     </div>
-</div>
+</div>*@
+    <div class="span9">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+            <li class="active"> SHOPPING CART</li>
+        </ul>
+        <h3>  SHOPPING CART<a asp-controller="Home" asp-action="Index" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>
+        <hr class="soft" />
+       
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Товар</th>
+                    <th>Описание</th>
+                    <th>Количество</th>
+                    <th>Цена</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.shopCart.ShopItemsList)
+                {
+                <tr>
+                    @{var t = item.price * item.amount;}
+                    <td> <img width="60" src="@item.Product.ImageUrlShowCase" alt="" /></td>
+                    <td>@item.Product.Name<br />Color : black, Material : metal</td>
+                    <td>
+                        <div class="input-append"><input class="span1" style="max-width:34px" placeholder="@item.amount" id="appendedInputButtons" size="16" type="text"><a class="btn" asp-controller="ShopCart" asp-action="RemoveAmount" asp-route-id="@item.Id" type="submit"><i class="icon-minus"></i></a><a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Product.Id" class="btn" type="submit"><i class="icon-plus"></i></a><a class="btn btn-danger" asp-controller="ShopCart" asp-action="RemoveFromCart" asp-route-id="@item.Id"><i class="icon-remove icon-white"></i></a>				</div>
+                    </td>
+                    <td>@t</td>
+
+
+                </tr>
+
+                }
+                    <tr>
+                        <td colspan="6" style="text-align:right"><strong>Финальная цена  =</strong></td>
+                        <td class="label label-important" style="display:block"> <strong> @total грн </strong></td>
+                    </tr>
+                </tbody>
+        </table>
+
+
+
+        
+        <a  asp-controller="ShopCart" asp-action="ClearCart" class="btn btn-danger"><i class="icon-arrow-left"></i> Очистить корзину </a>
+        <a asp-controller="Order" asp-action="Index" class="btn btn-large pull-right">Купить <i class="icon-arrow-right"></i></a>
+    </div>

@@ -105,26 +105,34 @@
         </div>
     </div>
 
-    @await Component.InvokeAsync("CategoryMenu")
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+
+    <div id="mainBody">
+        <div class="container">
+            <div class="row">
+
+                <div id="sidebar" class="span3">
+
+                    @await Component.InvokeAsync("CategoryMenu")
+                </div>
+
+                @RenderBody()
+
+            </div>
+        </div>
     </div>
 
+                <script src="~/themes/js/jquery.js" type="text/javascript"></script>
+                <script src="~/themes/js/bootstrap.min.js" type="text/javascript"></script>
+                <script src="~/themes/js/google-code-prettify/prettify.js"></script>
 
-    <script src="~/themes/js/jquery.js" type="text/javascript"></script>
-    <script src="~/themes/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="~/themes/js/google-code-prettify/prettify.js"></script>
+                <script src="~/themes/js/bootshop.js"></script>
+                <script src="~/themes/js/jquery.lightbox-0.5.js"></script>
 
-    <script src="~/themes/js/bootshop.js"></script>
-    <script src="~/themes/js/jquery.lightbox-0.5.js"></script>
-
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>*@
-    @RenderSection("Scripts", required: false)
+                @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+                    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+                    <script src="~/js/site.js" asp-append-version="true"></script>*@
+                @RenderSection("Scripts", required: false)
 
 
 </body>

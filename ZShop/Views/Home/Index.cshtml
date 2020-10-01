@@ -16,11 +16,9 @@
 
     <!-- Navbar ================================================== -->
     <!-- Header End====================================================================== -->
-    <div id="mainBody">
-        <div class="container">
-            <div class="row">
+    
                 <!-- Sidebar ================================================== -->
-        
+       
                 <!-- Sidebar end=============================================== -->
                 <div class="span9">
                     <ul class="breadcrumb">
@@ -43,7 +41,7 @@
                                             <p>
                                                 I'm a paragraph. Click here
                                             </p>
-                                            <h4 style="text-align:center"> <a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+                                            <h4 style="text-align:center"> <a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@Html.DisplayFor(x => item.Price) грн</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -73,9 +71,7 @@
 
                 <br class="clr" />
             </div>
-        </div>
-    </div>
-    </div>
+       
 
 </body>
 </html>
