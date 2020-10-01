@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Entities.Category>
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+
+@foreach (var category in Model)
+{
+    <option value="@category.Id">@category.Name</option>
+}
+

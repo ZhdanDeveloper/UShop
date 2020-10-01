@@ -15,6 +15,7 @@ namespace ZShop.Services.Interfaces
         Task UpdateAsync(Product product);
         IQueryable<Product> GetAll();
         IQueryable<Product> GetListByName(string Name);
+        IQueryable<Product> GetListByCategory(int Id);
         Product GetById(int Id);
         Task SaveAsync();
 

@@ -61,7 +61,13 @@ namespace ZShop.Controllers
 
         }
 
-       
+        public async Task<IActionResult> CategorySearch(int Id, int? pageNumber = 1)
+        {
+            
+            var prods = _productService.GetListByCategory(Id);
+            int pageSize = 1;
+            return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
+        }
 
         public IActionResult Privacy()
         {

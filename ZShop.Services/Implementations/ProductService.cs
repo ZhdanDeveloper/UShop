@@ -55,5 +55,10 @@ namespace ZShop.Services.Implementations
         {
             return _context.products.Where(x=>x.Name.Contains(Name));
         }
+
+        public IQueryable<Product> GetListByCategory(int Id)
+        {
+            return _context.products.Where(x => x.Category.Id == Id);
+        }
     }
 }
