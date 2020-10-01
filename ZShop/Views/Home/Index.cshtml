@@ -20,6 +20,7 @@
         <div class="container">
             <div class="row">
                 <!-- Sidebar ================================================== -->
+        
                 <!-- Sidebar end=============================================== -->
                 <div class="span9">
                     <ul class="breadcrumb">
@@ -38,7 +39,7 @@
                                     <div class="thumbnail">
                                         <a asp-action="ViewProduct" asp-route-id="@item.Id"><img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" alt="" /></a>
                                         <div class="caption">
-                                            <a  asp-action="ViewProduct" asp-route-id="@item.Id"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
+                                            <a asp-action="ViewProduct" asp-route-id="@item.Id"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
                                             <p>
                                                 I'm a paragraph. Click here
                                             </p>

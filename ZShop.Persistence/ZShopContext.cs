@@ -13,7 +13,7 @@ namespace ZShop.Persistence
         public DbSet<Product> products { get; set; }
         public DbSet<Item> items { get; set; }
         public DbSet<Order> orders { get; set; }
-
+        public DbSet<Category> categories { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<User>()

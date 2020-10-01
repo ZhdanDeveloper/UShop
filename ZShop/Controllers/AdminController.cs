@@ -51,7 +51,7 @@ namespace ZShop.Controllers
                 var product = new Product
                 {
                     Id = model.Id,
-                    Category = model.Category,
+                    CategoryId = model.CategoryId,
                     Description = model.Description,
                     Name = model.Name,
                     Price = model.Price

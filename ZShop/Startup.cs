@@ -49,7 +49,7 @@ namespace ZShop
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IOrderService, OrderService>();
-            services.AddPaging();
+            services.AddScoped<ICategoryService, CategoryService>();
             services.AddAuthorization();
         }
 

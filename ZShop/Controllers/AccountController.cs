@@ -86,7 +86,7 @@ namespace ZShop.Controllers
             }
             return View(model);
         }
-
+      
         private async Task Authenticate(string Name)
         {
 

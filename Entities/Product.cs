@@ -18,8 +18,8 @@ namespace Entities
         [Column(TypeName = "money")]
         [Required]
         public decimal Price { get; set; }
-        [Required]
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }      
         [Required]
         public string ImageUrl { get; set; }
         [Required]

@@ -17,7 +17,7 @@ namespace ZShop.Models.Account
         [Required]
         public decimal Price { get; set; }
         [Required]
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
         public IFormFile ImageUrl { get; set; }
         public IFormFile ImageUrlShowCase { get; set; }
     }
