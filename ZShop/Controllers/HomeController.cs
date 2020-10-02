@@ -42,11 +42,19 @@ namespace ZShop.Controllers
         }
         public async Task<IActionResult> Search(string SearchString, int? pageNumber, string currentFilter)
         {
-            
+            var prods = _productService.GetListByName(SearchString);
+            if (prods == null)
+            {
 
+            }
+           
             if (SearchString != null)
             {
                 pageNumber = 1;
+            }
+            else if(currentFilter == null)
+            {
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -54,7 +62,7 @@ namespace ZShop.Controllers
             }
             ViewData["CurrentFilter"] = SearchString;
 
-            var prods = _productService.GetListByName(SearchString);
+    
 
             int pageSize = 3;
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));

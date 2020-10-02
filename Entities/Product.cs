@@ -14,9 +14,9 @@ namespace Entities
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Description { get; set; }
-        [Column(TypeName = "money")]
+        public string Description { get; set; }      
         [Required]
+        [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }      
@@ -24,7 +24,11 @@ namespace Entities
         public string ImageUrl { get; set; }
         [Required]
         public string ImageUrlShowCase { get; set; }
-     
+        [Required]
+        public string Model { get; set; }
+        [Required]
+        public string Brand { get; set; }
+
 
     }
 }

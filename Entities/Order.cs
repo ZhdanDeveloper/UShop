@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Entities
@@ -17,6 +18,7 @@ namespace Entities
         //public Item Item { get; set; }
         public int ItemId { get; set; }
         public string ItemName { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
         public decimal price { get; set; }
         public int Quantity { get; set; }
     }

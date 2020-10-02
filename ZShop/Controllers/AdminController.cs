@@ -44,24 +44,26 @@ namespace ZShop.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost("Create")]
         [ValidateAntiForgeryToken] //Prevents cross-site Request Forgery Attacks
-        public async Task<IActionResult> Create(ProductViewModel model)
+        public async Task<IActionResult> Create(ProductViewModel modell)
         {
             if (ModelState.IsValid)
             {
                 var product = new Product
                 {
-                    Id = model.Id,
-                    CategoryId = model.CategoryId,
-                    Description = model.Description,
-                    Name = model.Name,
-                    Price = model.Price
+                    Id = modell.Id,
+                    CategoryId = modell.CategoryId,
+                    Description = modell.Description,
+                    Name = modell.Name,
+                    Price = modell.Price,
+                    Brand = modell.Brand,
+                    Model = modell.Model
 
                 };
-                if (model.ImageUrl != null && model.ImageUrl.Length > 0 && model.ImageUrlShowCase != null && model.ImageUrlShowCase.Length >0)
+                if (modell.ImageUrl != null && modell.ImageUrl.Length > 0 && modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length >0)
                 {
 
-                    product.ImageUrl = await UploadFile(@"images/prods", model.ImageUrl);
-                    product.ImageUrlShowCase = await UploadFile(@"images/showcase",  model.ImageUrlShowCase);
+                    product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
+                    product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
                    
 
                 }

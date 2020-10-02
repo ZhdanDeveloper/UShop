@@ -18,9 +18,7 @@
 
     <!-- Navbar ================================================== -->
     <!-- Header End====================================================================== -->
-    <div id="mainBody">
-        <div class="container">
-            <div class="row">
+ 
                 <!-- Sidebar ================================================== -->
                 <!-- Sidebar end=============================================== -->
                 <div class="span9">
@@ -40,43 +38,41 @@
                                     <div class="thumbnail">
                                         <a asp-action="ViewProduct" asp-route-id="@item.Id"><img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" alt="" /></a>
                                         <div class="caption">
-                                           <a asp-action="ViewProduct" asp-route-id="@item.Id"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
+                                            <a asp-action="ViewProduct" asp-route-id="@item.Id"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
                                             <p>
                                                 I'm a paragraph. Click here
                                             </p>
-                                            <h4 style="text-align:center"><a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+                                            <h4 style="text-align:center"><a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.Price грн</a></h4>
                                         </div>
                                     </div>
                                 </li>
                             }
                         </ul>
                         <hr class="soft" />
+                        @{
+                            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+                            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+                        }
+
+                        <a asp-action="Search"
+                           asp-route-pageNumber="@(Model.PageIndex - 1)"
+                           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                           class="btn btn-default @prevDisabled">
+                            Previous
+                        </a>
+                        <a asp-action="Search"
+                           asp-route-pageNumber="@(Model.PageIndex + 1)"
+                           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+                           class="btn btn-default @nextDisabled">
+                            Next
+                        </a>
                     </div>
                 </div>
 
-                @{
-                    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
-                    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
-                }
-
-                <a asp-action="Search"
-                   asp-route-pageNumber="@(Model.PageIndex - 1)"
-                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-                   class="btn btn-default @prevDisabled">
-                    Previous
-                </a>
-                <a asp-action="Search"
-                   asp-route-pageNumber="@(Model.PageIndex + 1)"
-                   asp-route-currentFilter="@ViewData["CurrentFilter"]"
-                   class="btn btn-default @nextDisabled">
-                    Next
-                </a>
+               
 
                 <br class="clr" />
-            </div>
-        </div>
-    </div>
-    </div>
+          
 
 </body>
 </html>
