@@ -17,7 +17,6 @@ C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.RazorAssem
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.TagHelpers.input.cache
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.TagHelpers.output.cache
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\ZShop.RazorCoreGenerate.cache
-C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Zhdan\Source\Repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -206,3 +205,5 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shar
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Search\CategorySearch.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Search\Search.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Edit.cshtml.g.cs

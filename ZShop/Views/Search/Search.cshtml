@@ -36,11 +36,11 @@
                             {
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <a asp-action="ViewProduct" asp-route-id="@item.Id"><img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" alt="" /></a>
+                                        <img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" alt="" />
                                         <div class="caption">
-                                            <a asp-action="ViewProduct" asp-route-id="@item.Id"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
+                                            <h5>@Html.DisplayFor(x => item.Name)</h5>
                                             <p>
-                                                I'm a paragraph. Click here
+                                                <a asp-controller="Home" asp-action="ViewProduct" asp-route-id="@item.Id">Осмотреть</a>
                                             </p>
                                             <h4 style="text-align:center"><a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.Price грн</a></h4>
                                         </div>

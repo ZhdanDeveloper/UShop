@@ -16,6 +16,7 @@ using ZShop.Services.Interfaces;
 namespace ZShop.Controllers
 {
     [Route("Admin")]
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly IProductService _productService;  
@@ -26,7 +27,7 @@ namespace ZShop.Controllers
             webHostEnvironment = hostEnvironment;
         }
 
-        [Authorize(Roles = "Admin")]
+  
         [HttpGet("AdminPanel")]
 
         public IActionResult AdminPanel()
@@ -34,14 +35,14 @@ namespace ZShop.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
+   
         [HttpGet("Create")]
         public IActionResult Create()
         {
           
             return View();
         }
-        [Authorize(Roles = "Admin")]
+   
         [HttpPost("Create")]
         [ValidateAntiForgeryToken] //Prevents cross-site Request Forgery Attacks
         public async Task<IActionResult> Create(ProductViewModel modell)
@@ -72,6 +73,58 @@ namespace ZShop.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var product = _productService.GetById(id);
+            var modell = new ProductViewModel
+            {
+                Brand = product.Brand,
+                Price = product.Price,
+                Model = product.Model,
+                Id = product.Id,
+                CategoryId = product.CategoryId,
+                Description = product.Description,
+                Name = product.Name
+                
+               
+            };
+          
+
+            return View(modell);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Edit(ProductViewModel modell)
+        {
+            if (ModelState.IsValid)
+            {
+                
+                var product = _productService.GetById(modell.Id);
+                product.Name = modell.Name;
+                product.Price = modell.Price;
+                product.Description = modell.Description;
+                product.Brand = modell.Brand;
+                product.CategoryId = modell.CategoryId;
+                product.Model = modell.Model;
+                DeleteFile(product.ImageUrl);
+                DeleteFile(product.ImageUrlShowCase);
+
+
+                if (modell.ImageUrl != null && modell.ImageUrl.Length > 0 && modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length > 0)
+                {
+
+                    product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
+                    product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
+
+
+                }
+
+                await _productService.UpdateAsync(product);
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
+        
 
         private async Task<string> UploadFile(string uploadDir, IFormFile ModelFileVarName)
         {
@@ -88,7 +141,15 @@ namespace ZShop.Controllers
 
         }
 
-
+        private void DeleteFile(string Path)
+        {
+            string fullPath = "wwwroot" + Path;
+            if (System.IO.File.Exists(fullPath))
+            {
+                System.IO.File.Delete(fullPath);
+                
+            }
+        }
     }
 }  
 

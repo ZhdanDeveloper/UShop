@@ -1,5 +1,4 @@
-﻿
-@model ZShop.Models.Pagination.PaginatedList<Entities.Product>
+﻿@model ZShop.Models.Pagination.PaginatedList<Entities.Product>
 @{
     ViewData["Title"] = "Index";
 }
@@ -16,10 +15,8 @@
 
     <!-- Navbar ================================================== -->
     <!-- Header End====================================================================== -->
-    
-                <!-- Sidebar ================================================== -->
-       
-                <!-- Sidebar end=============================================== -->
+    <!-- Sidebar ================================================== -->
+    <!-- Sidebar end=============================================== -->
     <div class="span9">
         <ul class="breadcrumb">
             <li><a href="index.html">Home</a> <span class="divider">/</span></li>
@@ -68,16 +65,15 @@
         </a>
     </div>
 
-               
 
-                <br class="clr" />
-            </div>
-       
+
+    <br class="clr" />
+    </div>
+
 
 </body>
 </html>
 @*<div class="container bootdey">
-
         <div class="col-md-9">
             <section class="panel">
                 <div class="panel-body">
@@ -86,7 +82,6 @@
                             var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
                             var nextDisabled = !Model.HasNextPage ? "disabled" : "";
                         }
-
                         <a asp-action="Index"
                            asp-route-pageNumber="@(Model.PageIndex - 1)"
                            asp-route-currentFilter="@ViewData["CurrentFilter"]"
@@ -101,13 +96,9 @@
                         </a>
                     </div>
             </section>
-
             <div class="row product-list">
                 @foreach (var item in Model)
                 {
-
-
-
                     <div class="col-md-4">
                         <section class="panel">
                             <div class="pro-img-box">
@@ -116,7 +107,6 @@
                                     <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </div>
-
                             <div class="panel-body text-center">
                                 <h4>
                                     <a asp-action="ViewProduct" asp-route-id="@item.Id" class="pro-title">
@@ -131,9 +121,3 @@
             </div>
         </div>
     </div>*@
-
-
-
-
-
-<!------ Include the above in your HEAD tag ---------->
