@@ -102,7 +102,12 @@ namespace ZShop.Controllers
 
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
 
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id),
+                  new AuthenticationProperties
+                  {
+                      ExpiresUtc = DateTime.UtcNow.AddYears(100),
+                      IsPersistent = true
+                  });
         }
 
         public async Task<IActionResult> Logout()

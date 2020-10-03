@@ -55,7 +55,7 @@
                     <span class="icon-bar"></span>
                 </a>
                 <div class="navbar-inner">
-                    <a class="brand" href="index.html"><img src="~/themes/images/logo.png" alt="Bootsshop" /></a>
+                    <a class="brand" asp-action="Index" asp-controller="Home"><img src="~/themes/images/logo.png" alt="Bootsshop" /></a>
 
                     <form class="form-inline navbar-search" asp-action="Search" asp-controller="Search" method="get">
                         <input class="srchTxt" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />

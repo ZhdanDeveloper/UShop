@@ -32,12 +32,15 @@ namespace ShopCartSpace
             //  string shopCartId = cookieValueFromContext ?? Guid.NewGuid().ToString();
 
             //session.SetString("CartId", shopCartId);
-
+        
             string cookieValueFromContext = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Request.Cookies["shopCartId"];
             //ISession session = services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
             var context = services.GetService<ZShopContext>();
             string shopCartId = cookieValueFromContext ?? Guid.NewGuid().ToString();
-            services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Response.Cookies.Append("shopCartId", shopCartId);
+            services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Response.Cookies.Append("shopCartId", shopCartId , new Microsoft.AspNetCore.Http.CookieOptions
+            {
+                Expires = DateTimeOffset.Now.AddYears(100)
+            });
             //session.SetString("CartId", shopCartId);
             return new ShopCart(context) { ShopCartId = shopCartId };
         }
