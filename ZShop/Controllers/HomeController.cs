@@ -40,42 +40,7 @@ namespace ZShop.Controllers
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
-        public async Task<IActionResult> Search(string SearchString, int? pageNumber, string currentFilter)
-        {
-            var prods = _productService.GetListByName(SearchString);
-            if (prods == null)
-            {
-
-            }
-           
-            if (SearchString != null)
-            {
-                pageNumber = 1;
-            }
-            else if(currentFilter == null)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            else
-            {
-                SearchString = currentFilter;
-            }
-            ViewData["CurrentFilter"] = SearchString;
-
-    
-
-            int pageSize = 3;
-            return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
-
-        }
-
-        public async Task<IActionResult> CategorySearch(int Id, int? pageNumber = 1)
-        {
-            
-            var prods = _productService.GetListByCategory(Id);
-            int pageSize = 1;
-            return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
-        }
+       
 
         public IActionResult Privacy()
         {

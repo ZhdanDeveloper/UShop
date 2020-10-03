@@ -57,12 +57,15 @@
                 <div class="navbar-inner">
                     <a class="brand" href="index.html"><img src="~/themes/images/logo.png" alt="Bootsshop" /></a>
 
-                    <form class="form-inline navbar-search" asp-action="Search" asp-controller="Home" method="get">
+                    <form class="form-inline navbar-search" asp-action="Search" asp-controller="Search" method="get">
                         <input class="srchTxt" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
                         <button type="submit" id="submitButton" class="btn btn-primary">Искать</button>
                     </form>
                     <ul id="topMenu" class="nav pull-right">
-
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class=""><a asp-action="AdminPanel" asp-controller="Admin">Админ панель</a></li>
+                        }
                         <li class=""><a href="normal.html">О нас</a></li>
                         <li class=""><a href="contact.html">Контакты</a></li>
                         <li class="">

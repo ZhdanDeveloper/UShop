@@ -202,7 +202,7 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ShopCart.dll
 C:\Users\Zhdan\source\repos\ZShop\ZShop\bin\Debug\netcoreapp3.1\ShopCart.pdb
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\Index.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Order\ThankPage.cshtml.g.cs
-C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\Search.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryMenu\Default.cshtml.g.cs
-C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\CategorySearch.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\CategoryList\Default.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Search\CategorySearch.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Search\Search.cshtml.g.cs
