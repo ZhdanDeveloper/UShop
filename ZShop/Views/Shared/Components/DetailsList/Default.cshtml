@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Entities.Detail>
+
+
+
+@foreach (var detail in Model)
+{
+    <tr class="techSpecRow"><td class="techSpecTD1">@detail.Name </td><td class="techSpecTD2">@detail.Description  @if (User.IsInRole("Admin"))
+    {<span class="divider">|</span><a asp-action="RemoveDetail" asp-controller="Admin" asp-route-id="@detail.Id" asp-route-ProductId="@detail.ProductId" style="color : red">удалить</a> <span class="divider">|</span> <a style="color:green">редактировать</a><span class="divider">|</span>}</td></tr>
+}
+
+

@@ -19,8 +19,8 @@
     <!-- Sidebar end=============================================== -->
     <div class="span9">
         <ul class="breadcrumb">
-            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-            <li class="active">Products Name</li>
+            <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+           
         </ul>
 
 
@@ -37,8 +37,10 @@
                                 <a><h5>@Html.DisplayFor(x => item.Name)</h5></a>
                                 <p>
                                     <a asp-action="ViewProduct" asp-route-id="@item.Id">Осмотреть</a>
+
                                 </p>
-                                <h4 style="text-align:center"> <a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@Html.DisplayFor(x => item.Price) грн</a></h4>
+                                
+                                <h4 style="text-align:center"> <a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Добавить в <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@Html.DisplayFor(x => item.Price) грн</a></h4>
                             </div>
                         </div>
                     </li>

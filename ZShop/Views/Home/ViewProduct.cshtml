@@ -8,86 +8,95 @@
 <html lang="en">
 
 <body>
-    
+
     <!-- Header End====================================================================== -->
- 
-                <!-- Sidebar ================================================== -->
-                
-                <!-- Sidebar end=============================================== -->
-                <div class="span9">
-                    <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-                        <li><a href="products.html">Products</a> <span class="divider">/</span></li>
-                        <li class="active">product Details</li>
-                    </ul>
-                    <div class="row">
-                        <div id="gallery" class="span3">
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)">
-                                <img src="@Html.DisplayFor(x=>x.ImageUrl)" style="width:100%" />
-                            </a>
-                            <div id="differentview" class="moreOptopm carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="item active">
-                                        <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                                        <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                                        <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                                    </div>
-                                    <div class="item">
-                                        <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                                        <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                                        <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                                    </div>
-                                </div>
-                                <!--
-                                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
-                                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
-                                -->
-                            </div>
+    <!-- Sidebar ================================================== -->
+    <!-- Sidebar end=============================================== -->
+    <div class="span9">
+        <ul class="breadcrumb">
+            <li><a asp-action="Index" asp-controller="Home">Главная</a> <span class="divider">/</span></li>
+            <li class="active">@Model.Name</li>
 
-                           
+        </ul>
+        <div class="row">
+            <div id="gallery" class="span3">
+                <a href="@Html.DisplayFor(x=>x.ImageUrl)">
+                    <img src="@Html.DisplayFor(x=>x.ImageUrl)" style="width:100%" />
+                </a>
+                <div id="differentview" class="moreOptopm carousel slide">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
                         </div>
-                        <div class="span6">
-                            <h3>@Html.DisplayFor(x => x.Name)</h3>
-                            <small></small>
-                            <hr class="soft" />
-                            <form class="form-horizontal qtyFrm">
-                                <div class="control-group">
-                                    <label class="control-label"><span>@Html.DisplayFor(x => x.Price) грн</span></label>
-                                    <div class="controls">
-                                        <button asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@Model.Id"type="submit" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
-                                    </div>
-                                </div>
-                            </form>                           
-                            <a class="btn btn-small pull-right" href="#detail">More Details</a>
-                            <br class="clr" />
-                            <a href="#" name="detail"></a>
-                            <hr class="soft" />
+                        <div class="item">
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
                         </div>
+                    </div>
+                    <!--
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a>
+                -->
+                </div>
 
-                        <div class="span9">                      
-                            <div id="myTabContent" class="tab-content">
-                                <div class="tab-pane fade active in" id="home">
-                                    <h4>Product Information</h4>
-                                    <table class="table table-bordered">
-                                        <tbody>
-                                            <tr class="techSpecRow"><th colspan="2">Детали</th></tr>
-                                            <tr class="techSpecRow"><td class="techSpecTD1">Производитель: </td><td class="techSpecTD2">@Model.Brand</td></tr>
-                                            <tr class="techSpecRow"><td class="techSpecTD1">Модель: </td><td class="techSpecTD2">@Model.Model</td></tr>
-                                   
-                                        </tbody>
-                                    </table>
 
-                                    <h5>Описание</h5>
-                                    <p>
-                                        @Html.DisplayFor(x => x.Description)
-                                    </p>
-
-                            </div>
+            </div>
+            <div class="span6">
+                <h3>@Html.DisplayFor(x => x.Name)</h3>
+                <small></small>
+                <hr class="soft" />
+                <form class="form-horizontal qtyFrm">
+                    <div class="control-group">
+                        <label class="control-label"><span>@Html.DisplayFor(x => x.Price) грн</span></label>
+                        <div class="controls">
+                            <button asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@Model.Id" type="submit" class="btn btn-large btn-primary pull-right"> Добавить в корзину <i class=" icon-shopping-cart"></i></button>
                         </div>
+                    </div>
+                </form>
+
+                <br class="clr" />
+                <a href="#" name="detail"></a>
+                <hr class="soft" />
+            </div>
+
+            <div class="span9">
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="home">
+
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr class="techSpecRow"><th colspan="2">Детали</th></tr>
+                                <tr class="techSpecRow"><td class="techSpecTD1">Производитель: </td><td class="techSpecTD2">@Model.Brand</td></tr>
+                                <tr class="techSpecRow"><td class="techSpecTD1">Модель: </td><td class="techSpecTD2">@Model.Model</td></tr>
+                                @await Component.InvokeAsync("DetailsList", new { id = Model.Id })
+
+                            </tbody>
+                        </table>
+
+                        <h5>Описание</h5>
+                        <p>
+                            @Html.DisplayFor(x => x.Description)
+                        </p>
 
                     </div>
                 </div>
-           
-                </div>
+
+            </div>
+        </div>
+        @if (User.IsInRole("Admin"))
+        {
+            <pre>
+   
+            <a class="btn-success" asp-action="AddDeatail" asp-controller="Admin" asp-route-id="@Model.Id">Добавить детали</a>
+            <a class="btn-success" asp-action="Edit" asp-controller="Admin" asp-route-id="@Model.Id">Редактировать</a>
+        </pre>
+        }
+
+    </div>
+
+    
 </body>
 </html>

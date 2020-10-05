@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "RUQcATrIFbGVq6uqEAdDOTdHb7wqRBo21EVjjjxJfN+Y9qFPdaNv2uvREWEhmnByUBmJ3rgqem/UUO4qtnyuSQ==",
+  "dgSpecHash": "IChna2I0MIFUD3EBF1vEsd0hKQJjtgvmtBHO+R36tQrVeFCJczr45RuMt3lpvogBrSy0us/9rt/+lOu+Y+tCdQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop\\ZShop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Zhdan\\.nuget\\packages\\ikvm\\8.1.5717\\ikvm.8.1.5717.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.authorization\\3.0.0\\microsoft.aspnetcore.authorization.3.0.0.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.components\\3.0.0\\microsoft.aspnetcore.components.3.0.0.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\3.0.0\\microsoft.aspnetcore.components.analyzers.3.0.0.nupkg.sha512",
@@ -192,16 +191,5 @@
     "C:\\Users\\Zhdan\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'IKVM 8.1.5717' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
-      "libraryId": "IKVM",
-      "targetGraphs": [
-        ".NETCoreApp,Version=v3.1"
-      ]
-    }
-  ]
+  "logs": []
 }

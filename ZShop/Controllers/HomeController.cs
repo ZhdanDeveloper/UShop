@@ -46,7 +46,7 @@ namespace ZShop.Controllers
         {
             return View();
         }
-        [HttpGet("ViewProduct")]
+        [HttpGet("ViewProduct/{id}")]
         public IActionResult ViewProduct(int id)
         {
             var Product = _productService.GetById(id);

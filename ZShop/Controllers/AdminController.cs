@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using ZShop.Models;
 using ZShop.Models.Account;
 using ZShop.Persistence;
 using ZShop.Services.Interfaces;
@@ -19,12 +20,16 @@ namespace ZShop.Controllers
     [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
-        private readonly IProductService _productService;  
+        private readonly IProductService _productService;
+        private readonly ICategoryService _categoryService;
+        private readonly IDetailsService _detailService;
         private readonly IWebHostEnvironment webHostEnvironment;
-        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment)
+        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService)
         {
             _productService = productService;
             webHostEnvironment = hostEnvironment;
+            _categoryService = categoryService;
+            _detailService = detailService;
         }
 
   
@@ -58,6 +63,8 @@ namespace ZShop.Controllers
                     Price = modell.Price,
                     Brand = modell.Brand,
                     Model = modell.Model
+                   
+
 
                 };
                 if (modell.ImageUrl != null && modell.ImageUrl.Length > 0 && modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length >0)
@@ -106,25 +113,64 @@ namespace ZShop.Controllers
                 product.Brand = modell.Brand;
                 product.CategoryId = modell.CategoryId;
                 product.Model = modell.Model;
-                DeleteFile(product.ImageUrl);
-                DeleteFile(product.ImageUrlShowCase);
+               
 
 
-                if (modell.ImageUrl != null && modell.ImageUrl.Length > 0 && modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length > 0)
+                if (modell.ImageUrl != null && modell.ImageUrl.Length > 0)
                 {
 
+                    DeleteFile(product.ImageUrl);
                     product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
-                    product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
+                  
 
 
                 }
-
+                if (modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length > 0)
+                {
+                    DeleteFile(product.ImageUrlShowCase);
+                    product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
+                }
                 await _productService.UpdateAsync(product);
                 return RedirectToAction("Index", "Home");
             }
             return View();
         }
-        
+        [HttpGet("Detail")]
+        public IActionResult AddDeatail(int id) {
+
+            var detail = new DetailViewModel
+            {
+                ProductId = id
+            };
+            return View(detail);
+
+        }
+        [HttpPost("Detail")]
+        public async Task<IActionResult> AddDeatail(DetailViewModel modell)
+        {
+            var detail = new Detail
+            {
+                Description = modell.Description,
+                Name = modell.Name,
+                ProductId = modell.ProductId,
+
+            };
+
+            await _detailService.AddDetail(detail);
+
+            return View();
+        }
+        [HttpGet("RemoveDetail/{id}")]
+        public async Task<IActionResult> RemoveDetail(int id, int ProductId)
+        {
+            
+
+            await _detailService.RemoveByIdAsync(id);
+
+
+            return RedirectToAction("ViewProduct", "Home", new {id= ProductId });
+
+        }
 
         private async Task<string> UploadFile(string uploadDir, IFormFile ModelFileVarName)
         {
@@ -141,9 +187,9 @@ namespace ZShop.Controllers
 
         }
 
-        private void DeleteFile(string Path)
+        private void DeleteFile(string fullPath)
         {
-            string fullPath = "wwwroot" + Path;
+            
             if (System.IO.File.Exists(fullPath))
             {
                 System.IO.File.Delete(fullPath);
