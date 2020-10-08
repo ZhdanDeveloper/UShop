@@ -27,6 +27,7 @@ namespace ZShop.Services.Implementations
             var items = _shopCart.GetItems();
             foreach (var item in items)
             {
+
                 var Order = new Order
                 {
                     City = order.City,
@@ -34,8 +35,8 @@ namespace ZShop.Services.Implementations
                     PersonLastName = order.PersonLastName,
                     Phone = order.Phone,
                     PostOfiice = order.PostOfiice,
-                    ItemId = item.Id,
-                    price = item.price,
+                    ItemId = item.Product.Id,
+                    price = item.price * item.amount,
                     Quantity = item.amount,
                     ItemName = item.Product.Name,
                     OrderTime = time,
@@ -54,10 +55,22 @@ namespace ZShop.Services.Implementations
             await SaveAsync();
         }
 
-        public IQueryable<Product> GetAll()
+        public Order FindById(int id)
         {
-            return _context.products;
+            return _context.orders.FirstOrDefault(x => x.Id == id);
         }
+
+        public IQueryable<Order> GetAll()
+        {
+            return _context.orders;
+        }
+
+        public IQueryable<Order> GetListByPhone(string Phone)
+        {
+            return _context.orders.Where(x => x.Phone.Contains(Phone));
+        }
+
+       
 
         public async Task SaveAsync()
         {

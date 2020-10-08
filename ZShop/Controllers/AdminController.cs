@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using ZShop.Models;
 using ZShop.Models.Account;
+using ZShop.Models.Pagination;
 using ZShop.Persistence;
 using ZShop.Services.Interfaces;
 
@@ -22,14 +24,16 @@ namespace ZShop.Controllers
     {
         private readonly IProductService _productService;
         private readonly ICategoryService _categoryService;
+        private readonly IOrderService _orderService;
         private readonly IDetailsService _detailService;
         private readonly IWebHostEnvironment webHostEnvironment;
-        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService)
+        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService)
         {
             _productService = productService;
             webHostEnvironment = hostEnvironment;
             _categoryService = categoryService;
             _detailService = detailService;
+            _orderService = orderService;
         }
 
   
@@ -171,6 +175,58 @@ namespace ZShop.Controllers
             return RedirectToAction("ViewProduct", "Home", new {id= ProductId });
 
         }
+
+        [HttpGet("Orders")]
+        public async Task<IActionResult> Orders(int? pageNumber = 1)
+        {
+           
+            var orders = _orderService.GetAll();
+
+            int pageSize = 3;
+            return View(await PaginatedList<Order>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
+          
+           
+        }
+        
+        [HttpGet("DeleteOrder")]
+        public async Task<IActionResult> DeleteOrder(int id)
+        {
+            var order = _orderService.FindById(id);
+             await _orderService.DeleteAsync(order);
+            return RedirectToAction("Orders","Admin");
+        }
+        [HttpGet("Search")]
+        public async Task<IActionResult> Search(string SearchString, int? pageNumber, string currentFilter)
+        {
+ 
+            var orders = _orderService.GetListByPhone(SearchString);
+            if (orders == null)
+            {
+
+            }
+
+            if (SearchString != null)
+            {
+                pageNumber = 1;
+            }
+            else if (currentFilter == null)
+            {
+                return RedirectToAction("Orders", "Admin");
+            }
+            else
+            {
+                SearchString = currentFilter;
+            }
+            ViewData["CurrentFilter"] = SearchString;
+
+
+
+            int pageSize = 3;
+            return View(await PaginatedList<Order>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+        }
+
+
 
         private async Task<string> UploadFile(string uploadDir, IFormFile ModelFileVarName)
         {

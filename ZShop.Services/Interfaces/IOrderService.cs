@@ -11,7 +11,9 @@ namespace ZShop.Services.Interfaces
     {
         Task CreateAsync(Order order);
         Task DeleteAsync(Order order);
-        IQueryable<Product> GetAll();
+        Order FindById(int id);
+        IQueryable<Order> GetAll();
+        IQueryable<Order> GetListByPhone(string Phone);
         Task SaveAsync();
     }
 }

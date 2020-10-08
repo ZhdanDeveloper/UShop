@@ -5,33 +5,39 @@
 
 
 
-<div class="container" style="margin-left:250px;">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        <span class="glyphicon glyphicon-bookmark"></span> <h1>AdminPanel</h1>
-                    </h3>
-                </div>
-                <div class="panel-body" style="height : 450px; width : 500px; padding-left:40px;">
-                    <div class="row">
-                        <div class="col-xs-10 col-md-6">
-                            <a asp-action="Create" asp-controller="Admin" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br />Добавить товар</a>
-                            <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br />Скоро будет</a>
-                            <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br />Скоро будет</a>
-                            <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br />Скоро будет</a>
-                        </div>
-                        <div class="col-xs-6 col-md-6">
-                            <a href="#" class="btn btn-success btn-lg" role="button" style="margin-left : 10px"><span class="glyphicon glyphicon-user"></span> <br />Управление покупателями</a>
-                            <a href="#" class="btn btn-info btn-lg" role="button" style="margin-left : 10px"><span class="glyphicon glyphicon-file"></span> <br />Скоро будет</a>
-                            <a href="#" class="btn btn-primary btn-lg" role="button" style="margin-left : 10px"><span class="glyphicon glyphicon-picture"></span> <br />Скоро будет</a>
-                            <a href="#" class="btn btn-primary btn-lg" role="button" style="margin-left : 10px"><span class="glyphicon glyphicon-tag"></span> <br />Скоро будет</a>
-                        </div>
-                    </div>
-                    <a href="http://www.jquery2dotnet.com/" class="btn btn-success btn-lg btn-block" role="button" style=" margin-left:10px;"><span class="glyphicon glyphicon-globe"></span> Скоро будет</a>
-                </div>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+    <!-- Header End====================================================================== -->
+    <!-- Sidebar ================================================== -->
+    <!-- Sidebar end=============================================== -->
+    <div class="span9">
+        <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <span class="divider">/</span></li>
+            <li class="active">Registration</li>
+        </ul>
+        <h3>Оформление заказа</h3>
+        <div class="well">
+            <div class="container" style="padding-bottom:10px">
+                <a class="btn" asp-action="Create" asp-controller="Admin">Добавить товар</a>
             </div>
+            <div class="container">
+                <a class="btn" asp-action="Orders" asp-controller="Admin">Заказы</a>
+            </div>
+            
+
+
+
         </div>
+
     </div>
-</div>
+
+    <!-- MainBody End ============================= -->
+    <!-- Footer ================================================================== -->
+
+
+</body>
+</html>

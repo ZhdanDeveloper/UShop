@@ -1,0 +1,117 @@
+﻿@model ZShop.Models.Pagination.PaginatedList<Entities.Order>
+@{
+    ViewData["Title"] = "Search";
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    a.disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+</style>
+<body>
+    <form class="form-inline navbar-search" asp-action="Search" asp-controller="Admin" method="get">
+        <input class="srchTxt" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <button type="submit" id="submitButton" class="btn btn-primary">Искать</button>
+    </form>
+
+    <div class="span9">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Имя</th>
+                    <th>Фамлия</th>
+                    <th>Телефон</th>
+                    <th>Область</th>
+                    <th>Город</th>
+                    <th>Номер отделения новой почты</th>
+                    <th>Время заказа</th>
+                    <th>ID товара</th>
+                    <th>Название товара</th>
+                    <th>Цена</th>
+                    <th>Количество</th>
+                    <th>Выполнено</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonFirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonLastName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Phone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Region)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.City)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PostOfiice)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrderTime)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ItemId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ItemName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        <td>
+                            <a asp-action="DeleteOrder" asp-controller="Admin" asp-route-id="@item.Id">выполнен</a>
+                        </td>
+
+
+
+
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+        @{
+            var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+            var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+        }
+
+        <a asp-action="Orders"
+           asp-route-pageNumber="@(Model.PageIndex - 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @prevDisabled">
+            Назад
+        </a>
+        <a asp-action="Orders"
+           asp-route-pageNumber="@(Model.PageIndex + 1)"
+           asp-route-currentFilter="@ViewData["CurrentFilter"]"
+           class="btn btn-default @nextDisabled">
+            Далее
+        </a>
+    </div>
+
+</body>
+</html>
