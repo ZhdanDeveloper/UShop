@@ -88,10 +88,12 @@
         </div>
         @if (User.IsInRole("Admin"))
         {
-            <pre>
+    <pre>
    
-            <a class="btn-success" asp-action="AddDeatail" asp-controller="Admin" asp-route-id="@Model.Id">Добавить детали</a>
-            <a class="btn-success" asp-action="Edit" asp-controller="Admin" asp-route-id="@Model.Id">Редактировать</a>
+    <a class="btn-success" asp-action="AddDeatail" asp-controller="Admin" asp-route-id="@Model.Id">Добавить детали</a>
+    <a class="btn-success" asp-action="Edit" asp-controller="Admin" asp-route-id="@Model.Id">Редактировать</a>
+    <a class="btn-success" asp-action="DeleteProduct" asp-controller="Admin" asp-route-id="@Model.Id">Удалить товар</a>
+
         </pre>
         }
 

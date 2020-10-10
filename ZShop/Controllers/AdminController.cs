@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using ShopCartSpace;
 using ZShop.Models;
 using ZShop.Models.Account;
 using ZShop.Models.Pagination;
@@ -27,13 +28,16 @@ namespace ZShop.Controllers
         private readonly IOrderService _orderService;
         private readonly IDetailsService _detailService;
         private readonly IWebHostEnvironment webHostEnvironment;
-        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService)
+        private readonly ShopCart _shopCart;
+
+        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService, ShopCart shopCart)
         {
             _productService = productService;
             webHostEnvironment = hostEnvironment;
             _categoryService = categoryService;
             _detailService = detailService;
             _orderService = orderService;
+            _shopCart = shopCart;
         }
 
   
@@ -226,18 +230,33 @@ namespace ZShop.Controllers
 
         }
 
-
+        [HttpGet("DeleteProduct")]
+        public async Task<IActionResult> DeleteProduct(int id)
+        {
+            var prod = _productService.GetById(id);
+            _shopCart.DeletItemFromEveryCart(id);
+            DeleteFile(prod.ImageUrl);
+            DeleteFile(prod.ImageUrlShowCase);
+            await _productService.DeleteAsync(prod);
+            return RedirectToAction("Index", "Home");
+        }
 
         private async Task<string> UploadFile(string uploadDir, IFormFile ModelFileVarName)
         {
 
-            
+
             var fileName = Path.GetFileNameWithoutExtension(ModelFileVarName.FileName);
             var extension = Path.GetExtension(ModelFileVarName.FileName);
             var webRootPath = webHostEnvironment.WebRootPath;
             fileName = DateTime.UtcNow.ToString("yymmssfff") + fileName + extension;
             var path = Path.Combine(webRootPath, uploadDir, fileName);
-            await ModelFileVarName.CopyToAsync(new FileStream(path, FileMode.Create));
+
+            using (FileStream destination = new FileStream(path, FileMode.Create))
+            {
+                await ModelFileVarName.CopyToAsync(destination);
+
+            }
+
             return "/" + uploadDir + "/" + fileName;
 
 
@@ -245,10 +264,9 @@ namespace ZShop.Controllers
 
         private void DeleteFile(string fullPath)
         {
-            
-            if (System.IO.File.Exists(fullPath))
+            if (System.IO.File.Exists("wwwroot" + fullPath))
             {
-                System.IO.File.Delete(fullPath);
+                System.IO.File.Delete("wwwroot" + fullPath);
                 
             }
         }

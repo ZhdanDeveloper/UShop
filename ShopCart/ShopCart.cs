@@ -103,6 +103,14 @@ namespace ShopCartSpace
 
         }
 
+        public void DeletItemFromEveryCart(int Id)
+        {
+            var items = _context.items.Where(x => x.Product.Id == Id);
+            _context.items.RemoveRange(items);
+            _context.SaveChanges();
+
+        }
+
         public List<Item> GetItems()
         {
             return ShopItemsList ?? (ShopItemsList = _context.items.Where(c => c.ShopCartId == ShopCartId).Include(s => s.Product).ToList());
