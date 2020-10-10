@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Entities.Category>
+
+@{
+    ViewData["Title"] = "Default";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+
+
+    <div class="span9">
+
+        <ul class="nav nav-tabs nav-stacked" style="width :100px">
+            @foreach (var category in Model)
+            {
+                <li>
+                    <a asp-action="CategorySearch" asp-controller="Search" asp-route-id="@category.Id">@category.Name</a>
+                </li>
+            }
+
+        </ul>
+
+        </div>
+        </body>
+</html>

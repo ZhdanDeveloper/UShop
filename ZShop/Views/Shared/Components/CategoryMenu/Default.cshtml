@@ -1,14 +1,24 @@
 ﻿@model IEnumerable<Entities.Category> 
 
 
+@{ int counter = 0; }
     <ul id="sideManu" class="nav nav-tabs nav-stacked">
         @foreach (var category in Model)
         {
+            counter++;
+            if (counter == 10)
+            {
+                <li>
+                    <a asp-action="AllCategories" asp-controller="Home">Все категории...</a>
+                </li>
+                break;
+
+            }
             <li>
-                <a asp-action="CategorySearch" asp-controller="Search" asp-route-id ="@category.Id">@category.Name</a>
+                <a asp-action="CategorySearch" asp-controller="Search" asp-route-id="@category.Id">@category.Name</a>
             </li>
         }
-           
+
     </ul>
    
 

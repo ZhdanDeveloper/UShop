@@ -40,7 +40,11 @@ namespace ZShop.Controllers
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
-       
+        [HttpGet("AllCategories")]
+        public IActionResult AllCategories()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

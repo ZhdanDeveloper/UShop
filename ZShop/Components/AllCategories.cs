@@ -7,10 +7,10 @@ using ZShop.Services.Interfaces;
 
 namespace ZShop.Components
 {
-    public class CategoryList : ViewComponent
+    public class AllCategories : ViewComponent
     {
         private ICategoryService _categoryService;
-        public CategoryList(ICategoryService categoryService)
+        public AllCategories(ICategoryService categoryService)
         {
 
             _categoryService = categoryService;
@@ -21,6 +21,5 @@ namespace ZShop.Components
             var categories = _categoryService.GetAll();
             return View(categories);
         }
-     
     }
 }

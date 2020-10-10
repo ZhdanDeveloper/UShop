@@ -66,6 +66,8 @@
                         {
                             <li class=""><a asp-action="AdminPanel" asp-controller="Admin">Админ панель</a></li>
                         }
+
+                        <li class=""><a asp-action="AllCategories" asp-controller="Home">Категори</a></li>
                         <li class=""><a href="normal.html">О нас</a></li>
                         <li class=""><a href="contact.html">Контакты</a></li>
                         <li class="">
@@ -114,7 +116,7 @@
         <div class="container">
             <div class="row">
 
-                <div id="sidebar" class="span3">
+                <div id="sidebar" class="span3 ">
 
                     @await Component.InvokeAsync("CategoryMenu")
                 </div>
