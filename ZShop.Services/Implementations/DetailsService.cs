@@ -22,15 +22,25 @@ namespace ZShop.Services.Implementations
             await SaveAsync();
         }
 
-        public IEnumerable<Detail> DetailsById(int id)
+        public IEnumerable<Detail> DetailsByProductId(int id)
         {
            return _context.details.Where(x => x.ProductId == id);
+        }
+        public Detail DetailById(int id)
+        {
+            return _context.details.FirstOrDefault(x => x.Id == id);
         }
 
         public async Task RemoveByIdAsync(int id)
         {
             var detail = _context.details.FirstOrDefault(x => x.Id == id);
             _context.Remove(detail);
+            await SaveAsync();
+        }
+
+        public async Task UpdateAsync(Detail detail)
+        {
+            _context.Update(detail);
             await SaveAsync();
         }
 

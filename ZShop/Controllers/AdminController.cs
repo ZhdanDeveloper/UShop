@@ -166,7 +166,27 @@ namespace ZShop.Controllers
 
             await _detailService.AddDetail(detail);
 
-            return View();
+            return RedirectToAction("ViewProduct", "Home", new {id = modell.ProductId});
+        }
+        [HttpGet("EditDetail")]
+        public IActionResult EditDetail(int id)
+        {
+            var detail = _detailService.DetailById(id);
+          
+            return View(detail);
+
+        }
+        [HttpPost("EditDetail")]
+        public async Task<IActionResult> EditDetail(Detail detail)
+        {
+            var _detail = _detailService.DetailById(detail.Id);
+
+            _detail.Name = detail.Name;
+            _detail.Description = detail.Description;
+           await _detailService.UpdateAsync(_detail);
+
+            return RedirectToAction("ViewProduct", "Home", new { id = _detail.ProductId });
+
         }
         [HttpGet("RemoveDetail/{id}")]
         public async Task<IActionResult> RemoveDetail(int id, int ProductId)

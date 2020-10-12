@@ -17,7 +17,7 @@ namespace ZShop.Components
         }
         public IViewComponentResult Invoke(int id)
         {
-            var categories = _detailsService.DetailsById(id);
+            var categories = _detailsService.DetailsByProductId(id);
             return View(categories);
         }
     }

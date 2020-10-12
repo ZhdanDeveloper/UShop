@@ -10,7 +10,9 @@ namespace ZShop.Services.Interfaces
     {
         Task AddDetail(Detail detail);
         Task SaveAsync();
-        IEnumerable<Detail> DetailsById(int id);
+        IEnumerable<Detail> DetailsByProductId(int id);
+        public Detail DetailById(int id);
+        Task UpdateAsync(Detail detail);
         Task RemoveByIdAsync(int id);
     }
 }
