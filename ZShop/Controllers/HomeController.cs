@@ -23,12 +23,15 @@ namespace ZShop.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IProductService _productService;
+        private readonly IComentService _comentService;
         private readonly ShopCart _shopCart;
-        public HomeController(ILogger<HomeController> logger, IProductService productService, ShopCart shopCart)
+
+        public HomeController(ILogger<HomeController> logger, IProductService productService, ShopCart shopCart, IComentService comentService)
         {
             _logger = logger;
             _productService = productService;
             _shopCart = shopCart;
+            _comentService = comentService;
         }
         public async Task<IActionResult> Index(int? pageNumber = 1)
         {
@@ -57,7 +60,18 @@ namespace ZShop.Controllers
 
             return View(Product);
         }
-       
+
+        [HttpPost("AddComment")]
+        public async Task<IActionResult> AddComment(Comment comment)
+        {
+            ClaimsPrincipal currentUser = this.User;
+            var currentUserId = currentUser.FindFirst("Id").Value;
+            comment.UserId = Convert.ToInt32(currentUserId);
+            await _comentService.CreateAsync(comment);
+
+            return RedirectToAction("Index", "Home");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

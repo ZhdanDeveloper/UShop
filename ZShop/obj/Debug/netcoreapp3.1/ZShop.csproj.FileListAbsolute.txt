@@ -186,3 +186,5 @@ C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admi
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Home\AllCategories.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AllCategories\Default.cshtml.g.cs
 C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditDetail.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\AddComment\Default.cshtml.g.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Comments\Default.cshtml.g.cs

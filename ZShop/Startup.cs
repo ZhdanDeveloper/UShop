@@ -51,6 +51,7 @@ namespace ZShop
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IDetailsService, DetailsService>();
+            services.AddScoped<IComentService, ComentService>();
             services.AddAuthorization();
         }
 

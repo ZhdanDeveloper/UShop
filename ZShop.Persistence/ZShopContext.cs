@@ -15,6 +15,7 @@ namespace ZShop.Persistence
         public DbSet<Order> orders { get; set; }
         public DbSet<Category> categories { get; set; }
         public DbSet<Detail> details { get; set; }
+        public DbSet<Comment> Comments { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<User>()

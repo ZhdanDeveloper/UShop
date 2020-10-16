@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Entities.Comment>
+@{
+    ViewData["Title"] = "Default";
+}
+<style>
+    .media-body .author {
+        display: block;
+        font-size: 1rem;
+        color: #000;
+        font-weight: 700;
+    }
+
+    .media-body .metadata {
+        display: block;
+        color: #777;
+        font-size: .8125rem;
+    }
+
+    .media-text {
+        margin-bottom: 0.25rem;
+    }
+
+    .title-comments {
+        font-size: 1.4rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+        color: rgba(0,0,0,.87);
+        margin-bottom: 1rem;
+        padding-bottom: .25rem;
+        border-bottom: 1px solid rgba(34,36,38,.15);
+    }
+
+    .media-left img {
+        width: 50px;
+    }
+</style>
+
+
+
+
+
+
+<div class="comments">
+    <h3 class="title-comments">Комментарии (6)</h3>
+    <ul class="media-list">
+        <!-- Комментарий (уровень 1) -->
+        @foreach (var comment in Model)
+        {
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-thumbnail" src="avatar1.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="media-heading">
+                        <div class="author">@comment.UserName</div>
+                        <div class="metadata">
+                            <span class="date">16 ноября 2015, 13:43</span>
+                        </div>
+                    </div>
+                    <div class="media-text text-justify">@comment.text</div>
+                    <div class="footer-comment">
+                        <a class="btn btn-default" href="#">Ответить</a>
+                    </div>
+                    <hr>
+                </div>
+            </li>
+        }
+    </ul>
+</div>
+
+

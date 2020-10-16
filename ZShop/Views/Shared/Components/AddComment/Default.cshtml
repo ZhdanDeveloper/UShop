@@ -1,0 +1,14 @@
+﻿@model Entities.Comment
+
+
+
+<form asp-action="AddComment" asp-controller="Home" method="post">
+
+
+    <p><b>Введите ваш отзыв:</b></p>
+    <input asp-for="ProductId" class="form-control hidden" placeholder="Цена" />
+    <input asp-for="UserName" value="@User.Identity.Name" class="form-control hidden" placeholder="Цена" />
+    <input asp-for="UserId" class="form-control hidden" placeholder="Цена" />
+    <p><textarea name="text" style="width:500px" asp-for="text"></textarea></p>
+    <p><input type="submit" value="Отправить"></p>
+</form>
