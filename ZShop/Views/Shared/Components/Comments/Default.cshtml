@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<Entities.Comment>
-@{
-    ViewData["Title"] = "Default";
-}
-<style>
+
+@*<style>
     .media-body .author {
         display: block;
         font-size: 1rem;
@@ -33,7 +31,7 @@
     .media-left img {
         width: 50px;
     }
-</style>
+</style>*@
 
 
 
@@ -48,13 +46,13 @@
         {
             <li class="media">
                 <div class="media-left">
-                    <a href="#">
-                        <img class="media-object img-thumbnail" src="avatar1.jpg" alt="...">
+                    <a>
+                        <img class="media-object img-thumbnail" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-128.png" alt="..." width="50" height="50">
                     </a>
                 </div>
                 <div class="media-body">
                     <div class="media-heading">
-                        <div class="author">@comment.UserName</div>
+                        <div class="author">@comment.UserName @if (User.IsInRole("Admin")) {<span style="color:red">[Admin]</span>}</div>
                         <div class="metadata">
                             <span class="date">16 ноября 2015, 13:43</span>
                         </div>

@@ -10,6 +10,7 @@ namespace ZShop.Components
     public class Comments : ViewComponent
     {
         private IComentService _comentService;
+
         public Comments(IComentService comentService)
         {
 
@@ -19,7 +20,7 @@ namespace ZShop.Components
 
         public IViewComponentResult Invoke(int id)
         {
-            var comments = _comentService.CommentsByProductId(30);
+            var comments = _comentService.CommentsByProductId(id);
             return View(comments);
         }
     }

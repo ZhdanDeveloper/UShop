@@ -87,7 +87,8 @@
 
 
         @await Component.InvokeAsync("AddComment", new { productId = Model.Id })
-        @await Component.InvokeAsync("Comments", new {id = Model.Id})
+
+        @await Component.InvokeAsync("Comments", new {id = Model.Id })
 
 
 

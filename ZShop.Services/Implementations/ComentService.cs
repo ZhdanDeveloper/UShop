@@ -21,7 +21,7 @@ namespace ZShop.Services.Implementations
 
         public IEnumerable<Comment> CommentsByProductId(int id)
         {
-            return _context.Comments;
+            return _context.Comments.Where(x=>x.ProductId == id);
         }
 
         public async Task CreateAsync(Comment comment)
