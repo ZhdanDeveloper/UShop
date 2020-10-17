@@ -39,7 +39,7 @@ namespace ZShop.Controllers
             var prods = _productService.GetAll();
 
 
-            int pageSize = 3;
+            int pageSize = 9;
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
@@ -48,7 +48,7 @@ namespace ZShop.Controllers
         {
             return View();
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
@@ -64,9 +64,9 @@ namespace ZShop.Controllers
         [HttpPost("AddComment")]
         public async Task<IActionResult> AddComment(Comment comment)
         {
-            ClaimsPrincipal currentUser = this.User;
-            var currentUserId = currentUser.FindFirst("Id").Value;
-            comment.UserId = Convert.ToInt32(currentUserId);
+            //ClaimsPrincipal currentUser = this.User;
+            //var currentUserId = currentUser.FindFirst("Id").Value;
+            comment.UserId = Convert.ToInt32(User.FindFirst("Id").Value);
             await _comentService.CreateAsync(comment);
 
             return RedirectToAction("Index", "Home");

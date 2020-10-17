@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Entities.Comment>
 
-@*<style>
+<style>
     .media-body .author {
         display: block;
         font-size: 1rem;
@@ -31,7 +31,7 @@
     .media-left img {
         width: 50px;
     }
-</style>*@
+</style>
 
 
 
@@ -39,28 +39,28 @@
 
 
 <div class="comments">
-    <h3 class="title-comments">Комментарии (6)</h3>
+    <h3 class="title-comments">Комментарии (@Model.Count())</h3>
     <ul class="media-list">
         <!-- Комментарий (уровень 1) -->
         @foreach (var comment in Model)
         {
             <li class="media">
                 <div class="media-left">
-                    <a>
-                        <img class="media-object img-thumbnail" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-128.png" alt="..." width="50" height="50">
-                    </a>
+
+                    <img class="media-object img-thumbnail" src="https://cdn2.iconfinder.com/data/icons/rcons-user/32/male-shadow-circle-128.png" alt="..." width="50" height="50">
+
                 </div>
                 <div class="media-body">
                     <div class="media-heading">
-                        <div class="author">@comment.UserName @if (User.IsInRole("Admin")) {<span style="color:red">[Admin]</span>}</div>
+                       
+                        <div class="author">@comment.UserName @if (User.IsInRole("Admin"))
+                        {<span style="color:red">[Admin]</span>}</div>
                         <div class="metadata">
-                            <span class="date">16 ноября 2015, 13:43</span>
+                            <span class="date">@comment.date</span>
                         </div>
                     </div>
                     <div class="media-text text-justify">@comment.text</div>
-                    <div class="footer-comment">
-                        <a class="btn btn-default" href="#">Ответить</a>
-                    </div>
+               
                     <hr>
                 </div>
             </li>

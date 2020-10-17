@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\images\prods_three\" />
+    <Folder Include="wwwroot\images\prods_two\" />
+    <Folder Include="wwwroot\images\prods_one\" />
     <Folder Include="wwwroot\images\prods\" />
     <Folder Include="wwwroot\images\showcase\" />
   </ItemGroup>

@@ -24,15 +24,11 @@
                 <div id="differentview" class="moreOptopm carousel slide">
                     <div class="carousel-inner">
                         <div class="item active">
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl_1)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_1)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl_2)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_2)" alt="" /></a>
+                            <a href="@Html.DisplayFor(x=>x.ImageUrl_3)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_3)" alt="" /></a>
                         </div>
-                        <div class="item">
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl)" alt="" /></a>
-                        </div>
+                      
                     </div>
                     <!--
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">‹</a>
@@ -84,14 +80,6 @@
 
             </div>
         </div>
-
-
-        @await Component.InvokeAsync("AddComment", new { productId = Model.Id })
-
-        @await Component.InvokeAsync("Comments", new {id = Model.Id })
-
-
-
         @if (User.IsInRole("Admin"))
         {
             <pre>
@@ -102,6 +90,20 @@
 
         </pre>
         }
+    <hr />
+        @if (!(User.Identity.IsAuthenticated))
+        {
+            <a class="btn" asp-action="Login" asp-controller="Account">Войти</a> <span>чтоб оставить отзыв</span>
+        }
+        else
+        { @await Component.InvokeAsync("AddComment", new { productId = Model.Id })}
+
+
+        @await Component.InvokeAsync("Comments", new { id = Model.Id })
+
+
+
+
 
     </div>
 

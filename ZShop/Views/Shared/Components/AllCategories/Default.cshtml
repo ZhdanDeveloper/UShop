@@ -12,12 +12,22 @@
 
     <div class="span9">
 
-        <ul class="nav nav-tabs nav-stacked" style="width :100px">
+        <ul class="nav nav-tabs nav-stacked" style="width :120px">
             @foreach (var category in Model)
             {
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="RemoveCategory" asp-controller="Admin" asp-route-id="@category.Id" style="color:red;">Удалить ↓</a>
+                    <a asp-action="EditCategory" asp-controller="Admin" asp-route-id="@category.Id" style="color:green;">Редактировать ↓</a>
+                }
+
+
                 <li>
+
                     <a asp-action="CategorySearch" asp-controller="Search" asp-route-id="@category.Id">@category.Name</a>
                 </li>
+
+
             }
 
         </ul>

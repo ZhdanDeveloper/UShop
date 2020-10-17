@@ -19,6 +19,9 @@ namespace ZShop.Models.Account
         [Required]
         public int CategoryId { get; set; }
         public IFormFile ImageUrl { get; set; }
+        public IFormFile ImageUrl_1 { get; set; }
+        public IFormFile ImageUrl_2 { get; set; }
+        public IFormFile ImageUrl_3 { get; set; }
         public IFormFile ImageUrlShowCase { get; set; }
         [Required]
         public string Model { get; set; }

@@ -29,7 +29,7 @@ namespace ZShop.Controllers
             var prods = _productService.GetListByName(SearchString);
             if (prods == null)
             {
-
+                     
             }
 
             if (SearchString != null)
@@ -57,7 +57,7 @@ namespace ZShop.Controllers
         {
 
             var prods = _productService.GetListByCategory(Id);
-            int pageSize = 1;
+            int pageSize = 9;
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 

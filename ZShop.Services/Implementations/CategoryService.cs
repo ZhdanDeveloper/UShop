@@ -17,6 +17,12 @@ namespace ZShop.Services.Implementations
             _context = context;
         }
 
+        public async Task AddCategoryAsync(Category category)
+        {
+            _context.categories.Add(category);
+            await SaveAsync();
+        }
+
         public IQueryable<Category> GetAll()
         {
             return _context.categories;
@@ -25,6 +31,18 @@ namespace ZShop.Services.Implementations
         public Category GetById(int Id)
         {
             return _context.categories.FirstOrDefault(x=>x.Id == Id);
+        }
+
+        public async Task RemoveCategoryByIdAsync(int id)
+        {
+            var category = _context.categories.FirstOrDefault(x=>x.Id == id);
+            _context.categories.Remove(category);
+            await SaveAsync();
+        }
+
+        public async Task SaveAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

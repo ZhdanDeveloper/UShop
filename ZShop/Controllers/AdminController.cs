@@ -79,6 +79,9 @@ namespace ZShop.Controllers
                 {
 
                     product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
+                    product.ImageUrl_1 = await UploadFile(@"images/prods_one", modell.ImageUrl_1);
+                    product.ImageUrl_2 = await UploadFile(@"images/prods_two", modell.ImageUrl_2);
+                    product.ImageUrl_3 = await UploadFile(@"images/prods_three", modell.ImageUrl_3);
                     product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
                    
 
@@ -129,14 +132,27 @@ namespace ZShop.Controllers
 
                     DeleteFile(product.ImageUrl);
                     product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
-                  
-
 
                 }
                 if (modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length > 0)
                 {
                     DeleteFile(product.ImageUrlShowCase);
                     product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
+                }
+                if (modell.ImageUrl_1 != null && modell.ImageUrl_1.Length > 0)
+                {
+                    DeleteFile(product.ImageUrl_1);
+                    product.ImageUrl_1 = await UploadFile(@"images/prods_one", modell.ImageUrl_1);
+                }
+                if (modell.ImageUrl_2 != null && modell.ImageUrl_2.Length > 0)
+                {
+                    DeleteFile(product.ImageUrl_2);
+                    product.ImageUrl_2 = await UploadFile(@"images/prods_two", modell.ImageUrl_2);
+                }
+                if (modell.ImageUrl_3 != null && modell.ImageUrl_3.Length > 0)
+                {
+                    DeleteFile(product.ImageUrl_3);
+                    product.ImageUrl_3 = await UploadFile(@"images/prods_three", modell.ImageUrl_3);
                 }
                 await _productService.UpdateAsync(product);
                 return RedirectToAction("Index", "Home");
@@ -176,6 +192,49 @@ namespace ZShop.Controllers
             return View(detail);
 
         }
+        [HttpGet("AddCategory")]
+        public IActionResult AddCategory()
+        {
+          
+            return View();
+
+        }
+        [HttpPost("AddCategory")]
+        public async Task<IActionResult> AddCategory(Category category)
+        {
+            await _categoryService.AddCategoryAsync(category);
+            return RedirectToAction("AdminPanel", "Admin");
+
+        }
+        [HttpGet("RemoveCategory")]
+        public async Task<IActionResult> RemoveCategory(int id)
+        {
+            try
+            {
+                await _categoryService.RemoveCategoryByIdAsync(id);
+            }
+            catch (Exception)
+            {
+
+                return RedirectToAction("Index", "Home");
+            }
+           
+            return RedirectToAction("AllCategories","Home");
+        }
+        [HttpGet("EditCategory")]
+        public IActionResult EditCategory(int id)
+        {
+            var category =  _categoryService.GetById(id);
+            return View(category);
+        }
+        [HttpPost("EditCategory")]
+        public async Task<IActionResult> EditCategory(Category category)
+        {
+            var _category = _categoryService.GetById(category.Id);
+            _category.Name = category.Name;
+            await _categoryService.SaveAsync();
+            return RedirectToAction("AllCategories", "Home");
+        }
         [HttpPost("EditDetail")]
         public async Task<IActionResult> EditDetail(Detail detail)
         {
@@ -206,7 +265,7 @@ namespace ZShop.Controllers
            
             var orders = _orderService.GetAll();
 
-            int pageSize = 3;
+            int pageSize = 7;
             return View(await PaginatedList<Order>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
           
            
@@ -245,7 +304,7 @@ namespace ZShop.Controllers
 
 
 
-            int pageSize = 3;
+            int pageSize = 7;
             return View(await PaginatedList<Order>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
@@ -257,6 +316,9 @@ namespace ZShop.Controllers
             _shopCart.DeletItemFromEveryCart(id);
             DeleteFile(prod.ImageUrl);
             DeleteFile(prod.ImageUrlShowCase);
+            DeleteFile(prod.ImageUrl_1);
+            DeleteFile(prod.ImageUrl_2);
+            DeleteFile(prod.ImageUrl_3);
             await _productService.DeleteAsync(prod);
             return RedirectToAction("Index", "Home");
         }

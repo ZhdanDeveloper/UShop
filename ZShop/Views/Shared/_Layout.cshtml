@@ -57,7 +57,7 @@
                 <div class="navbar-inner">
                     <a class="brand" asp-action="Index" asp-controller="Home"><img src="~/themes/images/logo123.png"/></a>
 
-                    <form class="form-inline navbar-search" asp-action="Search" asp-controller="Admin" method="get">
+                    <form class="form-inline navbar-search" asp-action="Search" asp-controller="Search" method="get">
                         <input class="srchTxt" type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
                         <button type="submit" id="submitButton" class="btn btn-primary">Искать</button>
                     </form>
@@ -67,7 +67,7 @@
                             <li class=""><a asp-action="AdminPanel" asp-controller="Admin">Админ панель</a></li>
                         }
 
-                        <li class=""><a asp-action="AllCategories" asp-controller="Home">Категори</a></li>
+                        <li class=""><a asp-action="AllCategories" asp-controller="Home">Категории</a></li>
                         <li class=""><a href="normal.html">О нас</a></li>
                         <li class=""><a href="contact.html">Контакты</a></li>
                         <li class="">

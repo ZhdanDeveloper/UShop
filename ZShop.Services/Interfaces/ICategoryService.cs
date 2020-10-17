@@ -11,6 +11,8 @@ namespace ZShop.Services.Interfaces
     {
         IQueryable<Category> GetAll();
         Category GetById(int Id);
-    
+        Task AddCategoryAsync(Category category);
+        Task RemoveCategoryByIdAsync(int id);
+        Task SaveAsync();
     }
 }

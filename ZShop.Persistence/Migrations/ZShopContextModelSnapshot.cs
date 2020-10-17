@@ -50,6 +50,9 @@ namespace ZShop.Persistence.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("date")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("text")
                         .HasColumnType("nvarchar(max)");
 
@@ -179,6 +182,18 @@ namespace ZShop.Persistence.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrlShowCase")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl_1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl_2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageUrl_3")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

@@ -15,19 +15,19 @@
     
                 <div class="span9">
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-                        <li class="active">Login</li>
+                        <li><a asp-action="Index" asp-controller="Home">Главная</a> <span class="divider">/</span></li>
+                        <li class="active">Регистрация | Авторизация</li>
                     </ul>
-                    <h3> Login</h3>
+                    <h3> </h3>
                     <hr class="soft" />
 
                     <div class="row">
                         <div class="span4">
                             <div class="well">
-                                <h5>CREATE YOUR ACCOUNT</h5><br />
+                                <h5>Регистрация</h5><br />
                                
                                     <div class="controls">
-                                        <a  asp-action="Register" asp-controller="Account" class="btn block">Create Your Account</a>
+                                        <a  asp-action="Register" asp-controller="Account" class="btn block">Создать аккаунт</a>
                                     </div>
                               
                             </div>
@@ -35,25 +35,25 @@
                         <div class="span1"> &nbsp;</div>
                         <div class="span4">
                             <div class="well">
-                                <h5>ALREADY REGISTERED ?</h5>
+                                <h5>Уже зарегистрирован?</h5>
                                 <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
                                     <div class="control-group" >
-                                        <label asp-for="Password" class="control-label" for="inputEmail1">Логин</label>
+                                        <label asp-for="Password" class="control-label" for="inputEmail1">Войти</label>
                                         <div class="controls">
                                             <input asp-for="Name" class="span3" type="text" id="inputEmail1" placeholder="Логин">
                                             <span asp-validation-for="Name" class="text-danger"></span>
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" asp-for="Password">Password</label>
+                                        <label class="control-label" asp-for="Password">Пароль</label>
                                         <div class="controls">
-                                            <input asp-for="Password" type="password" class="span3" id="inputPassword1" placeholder="Password">
+                                            <input asp-for="Password" type="password" class="span3" id="inputPassword1" placeholder="Пароль">
                                             <span asp-validation-for="Password" class="text-danger"></span>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="controls">
-                                            <button type="submit" class="btn">Sign in</button> 
+                                            <button type="submit" class="btn">Войти</button> 
                                         </div>
                                     </div>
                                 </form>

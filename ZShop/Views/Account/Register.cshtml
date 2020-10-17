@@ -24,8 +24,8 @@
                 <!-- Sidebar end=============================================== -->
                 <div class="span9">
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-                        <li class="active">Registration</li>
+                        <li><a asp-action="Index" asp-controller="Home">Главная</a> <span class="divider">/</span></li>
+                        <li class="active">Регистрация</li>
                     </ul>
                     <h3> Registration</h3>
                     <div class="well">
@@ -35,38 +35,38 @@
 
                             
                             <div class="control-group">
-                                <label class="control-label" asp-for="Name">Username</label>
+                                <label class="control-label" asp-for="Name">Никнейм [должен быть уникальным]</label>
                                 <div class="controls">
                                     <input asp-for="Name" class="form-control" required="required">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" asp-for="Email">Email Address</label>
+                                <label class="control-label" asp-for="Email">Адрес електронной почты</label>
                                 <div class="controls">
                                     <input asp-for="Email" class="form-control" required="required">
                                 </div>
                             </div>
-                            <div class="control-group">
-                                <label class="control-label" asp-for="Phone">Phone</label>
+                            <div class="control-group" >
+                                <label class="control-label" asp-for="Phone">Телефон</label>
                                 <div class="controls">
-                                    <input asp-for="Phone" class="form-control" required="required">
+                                <input asp-for="Phone" value="+380" class="form-control" required="required">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label" asp-for="Password">Password</label>
+                                <label class="control-label" asp-for="Password">Пароль</label>
                                 <div class="controls">
                                     <input asp-for="Password" class="form-control" required="required">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label class="control-label col-xs-4" asp-for="ConfirmPassword">Confirm Password</label>
+                                <label class="control-label col-xs-4" asp-for="ConfirmPassword">Подтвердите пароль</label>
                                 <div class="controls">
                                     <input asp-for="ConfirmPassword" class="form-control" required="required">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <div class="controls">
-                                    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+                                    <button type="submit" class="btn btn-primary btn-lg">Зарегистрироваться</button>
                                 </div>
                             </div>
 
