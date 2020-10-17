@@ -25,16 +25,12 @@ namespace ZShop.Services.Implementations
             await _context.Users.AddAsync(newUser);
             await SaveAsync();
         }
-        public User GetById(int userId)
-        {
-            return _context.Users.Where(u => u.Id == userId).FirstOrDefault();
-        }
-
+        
 
         public async Task Delete(int userId)
         {
             var user = GetById(userId);
-            _context.Remove(user);
+            _context.Users.Remove(user);
             await SaveAsync();
         }
         public async Task UpdateAsync(User user)
@@ -50,16 +46,14 @@ namespace ZShop.Services.Implementations
             await SaveAsync();
         }
 
-        public IEnumerable<User> GetAll()
+        public IQueryable<User> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Users;
         }
 
-   
-
-        User IUserService.GetById(int UserId)
+        public User GetById(int UserId)
         {
-            throw new NotImplementedException();
+            return _context.Users.FirstOrDefault(x => x.Id == UserId);
         }
 
         public async Task SaveAsync()
@@ -67,6 +61,11 @@ namespace ZShop.Services.Implementations
              
              await _context.SaveChangesAsync();
             
+        }
+
+        public IQueryable<User> GetUsersByName(string Name)
+        {
+            return _context.Users.Where(x => x.Name.Contains(Name));
         }
     }
 }

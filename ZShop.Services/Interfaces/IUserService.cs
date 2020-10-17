@@ -1,6 +1,7 @@
 ﻿using Entities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +11,11 @@ namespace ZShop.Services.Interfaces
     {
         Task CreateAsync(User user);
         Task Delete(int userId);
-        IEnumerable<User> GetAll();
+        IQueryable<User> GetAll();
         Task UpdateAsync(User user);
         Task UpdateAsync(int id);
-        public User GetById(int UserId);
-        public Task SaveAsync();
+        User GetById(int UserId);
+        IQueryable<User> GetUsersByName(string Name);
+        Task SaveAsync();
     }
 }

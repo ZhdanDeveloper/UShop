@@ -27,16 +27,18 @@ namespace ZShop.Controllers
         private readonly ICategoryService _categoryService;
         private readonly IOrderService _orderService;
         private readonly IDetailsService _detailService;
+        private readonly IUserService _userService;
         private readonly IWebHostEnvironment webHostEnvironment;
         private readonly ShopCart _shopCart;
 
-        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService, ShopCart shopCart)
+        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService, IUserService userService, ShopCart shopCart)
         {
             _productService = productService;
             webHostEnvironment = hostEnvironment;
             _categoryService = categoryService;
             _detailService = detailService;
             _orderService = orderService;
+            _userService = userService;
             _shopCart = shopCart;
         }
 
@@ -300,12 +302,87 @@ namespace ZShop.Controllers
             {
                 SearchString = currentFilter;
             }
-            ViewData["CurrentFilter"] = SearchString;
+            ViewData["CurrentFilter1"] = SearchString;
 
 
 
             int pageSize = 7;
             return View(await PaginatedList<Order>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+        }
+
+
+        [HttpGet("GetUsers")]
+        public async Task<IActionResult> GetUsers(int? pageNumber = 1)
+        {
+
+            var users = _userService.GetAll();
+
+
+            int pageSize = 9;
+            return View(await PaginatedList<User>.CreateAsync(users.AsNoTracking(), pageNumber ?? 1, pageSize));
+
+        }
+
+        [HttpGet("ChangeRole")]
+        public async Task<IActionResult> ChangeRole(string role, int id)
+        {
+
+            var user = _userService.GetById(id);
+
+            if (user.Role == "Admin")
+            {
+                user.Role = "User";
+                await _userService.SaveAsync();
+            }
+            else
+            {
+                user.Role = "Admin";
+                await _userService.SaveAsync();
+            }
+            return RedirectToAction("GetUsers", "Admin");
+
+        }
+
+
+        [HttpGet("DeleteUser")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+
+            await _userService.Delete(id);
+            return RedirectToAction("GetUsers", "Admin");
+
+
+        }
+
+        [HttpGet("UserSearch")]
+        public async Task<IActionResult> UserSearch(string SearchString, int? pageNumber, string currentFilter)
+        {
+
+            var orders = _userService.GetUsersByName(SearchString);
+            if (orders == null)
+            {
+
+            }
+
+            if (SearchString != null)
+            {
+                pageNumber = 1;
+            }
+            else if (currentFilter == null)
+            {
+                return RedirectToAction("GetUsers", "Admin");
+            }
+            else
+            {
+                SearchString = currentFilter;
+            }
+            ViewData["CurrentFilter2"] = SearchString;
+
+
+
+            int pageSize = 7;
+            return View(await PaginatedList<User>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
 
