@@ -31,8 +31,8 @@
                 @foreach (var item in Model)
                 {
                     <li class="span3">
-                        <div class="thumbnail" style="height:320px;">
-                            <img src="@Html.DisplayFor(x => item.ImageUrlShowCase)" width="250" height="250" alt="" />
+                        <div class="thumbnail" >
+                            <img src="@Html.DisplayFor(x => item.ImageUrlShowCase)"style="width:250px; height:220px;" alt="" />
                             <div class="caption">
                                 <a><h5>@Html.DisplayFor(x => item.Name)</h5></a>
                                 <p>

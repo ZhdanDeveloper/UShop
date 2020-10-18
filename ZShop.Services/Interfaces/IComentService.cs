@@ -10,7 +10,10 @@ namespace ZShop.Services.Interfaces
     {
         Task CreateAsync(Comment comment);
         Task DeleteAsync(Comment comment);
+        Task DeleteAllByUserId(int Id);
+        Task DeleteAllByProductId(int Id);
         IEnumerable<Comment> CommentsByProductId(int id);
+        IEnumerable<Comment> CommentsByUserId(int id);
         Task SaveAsync();
 
     }

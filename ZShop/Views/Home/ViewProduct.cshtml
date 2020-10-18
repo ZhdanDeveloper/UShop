@@ -24,9 +24,19 @@
                 <div id="differentview" class="moreOptopm carousel slide">
                     <div class="carousel-inner">
                         <div class="item active">
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl_1)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_1)" alt="" /></a>
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl_2)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_2)" alt="" /></a>
-                            <a href="@Html.DisplayFor(x=>x.ImageUrl_3)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_3)" alt="" /></a>
+                            @if (Model.ImageUrl_1 != null)
+                            {
+                                <a href="@Html.DisplayFor(x=>x.ImageUrl_1)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_1)" alt="" /></a>
+                            }
+                            @if (Model.ImageUrl_2 != null)
+                            {
+                                <a href="@Html.DisplayFor(x=>x.ImageUrl_2)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_2)" alt="" /></a>
+                            }
+                            @if (Model.ImageUrl_3 != null)
+                            {
+                                <a href="@Html.DisplayFor(x=>x.ImageUrl_3)"> <img style="width:29%" src="@Html.DisplayFor(x=>x.ImageUrl_3)" alt="" /></a>
+                            }
+                            
                         </div>
                       
                     </div>

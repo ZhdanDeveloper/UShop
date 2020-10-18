@@ -1,0 +1,15 @@
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\ZShop.Persistence.deps.json
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\ZShop.Persistence.runtimeconfig.json
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\ZShop.Persistence.runtimeconfig.dev.json
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\ZShop.Persistence.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\ZShop.Persistence.pdb
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\Entities.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\bin\Release\netcoreapp3.1\Entities.pdb
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.csprojAssemblyReference.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.AssemblyInfoInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.AssemblyInfo.cs
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.csproj.CopyComplete
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.dll
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.pdb
+C:\Users\Zhdan\source\repos\ZShop\ZShop.Persistence\obj\Release\netcoreapp3.1\ZShop.Persistence.genruntimeconfig.cache

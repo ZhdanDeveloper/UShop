@@ -22,11 +22,11 @@ namespace Entities
         public Category Category { get; set; }      
         [Required]
         public string ImageUrl { get; set; }
-        [Required]
+       
         public string ImageUrl_1 { get; set; }
-        [Required]
+        
         public string ImageUrl_2 { get; set; }
-        [Required]
+        
         public string ImageUrl_3 { get; set; }
         [Required]
         public string ImageUrlShowCase { get; set; }

@@ -29,9 +29,11 @@ namespace ZShop.Controllers
         private readonly IDetailsService _detailService;
         private readonly IUserService _userService;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly IComentService _comentService;
+
         private readonly ShopCart _shopCart;
 
-        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService, IUserService userService, ShopCart shopCart)
+        public AdminController(IProductService productService, IWebHostEnvironment hostEnvironment, ICategoryService categoryService, IDetailsService detailService, IOrderService orderService, IUserService userService, ShopCart shopCart, IComentService comentService)
         {
             _productService = productService;
             webHostEnvironment = hostEnvironment;
@@ -40,6 +42,7 @@ namespace ZShop.Controllers
             _orderService = orderService;
             _userService = userService;
             _shopCart = shopCart;
+            _comentService = comentService;
         }
 
   
@@ -81,9 +84,9 @@ namespace ZShop.Controllers
                 {
 
                     product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
-                    product.ImageUrl_1 = await UploadFile(@"images/prods_one", modell.ImageUrl_1);
-                    product.ImageUrl_2 = await UploadFile(@"images/prods_two", modell.ImageUrl_2);
-                    product.ImageUrl_3 = await UploadFile(@"images/prods_three", modell.ImageUrl_3);
+                    product.ImageUrl_1 = product.ImageUrl_1 == null ? null : await UploadFile(@"images/prods_one", modell.ImageUrl_1);
+                    product.ImageUrl_2 = product.ImageUrl_2 == null ? null : await UploadFile(@"images/prods_two", modell.ImageUrl_2);
+                    product.ImageUrl_3 = product.ImageUrl_3 == null ? null : await UploadFile(@"images/prods_three", modell.ImageUrl_3);
                     product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
                    
 
@@ -348,7 +351,10 @@ namespace ZShop.Controllers
         [HttpGet("DeleteUser")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-
+            if (_comentService.CommentsByUserId(id) != null)
+            {
+               await _comentService.DeleteAllByUserId(id);
+            }
             await _userService.Delete(id);
             return RedirectToAction("GetUsers", "Admin");
 
@@ -390,12 +396,18 @@ namespace ZShop.Controllers
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var prod = _productService.GetById(id);
+            if (_comentService.CommentsByProductId(id) != null)
+            {
+                await _comentService.DeleteAllByProductId(id);
+            }
             _shopCart.DeletItemFromEveryCart(id);
             DeleteFile(prod.ImageUrl);
             DeleteFile(prod.ImageUrlShowCase);
             DeleteFile(prod.ImageUrl_1);
             DeleteFile(prod.ImageUrl_2);
             DeleteFile(prod.ImageUrl_3);
+         
+            
             await _productService.DeleteAsync(prod);
             return RedirectToAction("Index", "Home");
         }

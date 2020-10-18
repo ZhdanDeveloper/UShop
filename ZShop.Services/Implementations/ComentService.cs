@@ -24,9 +24,28 @@ namespace ZShop.Services.Implementations
             return _context.Comments.Where(x=>x.ProductId == id);
         }
 
+        public IEnumerable<Comment> CommentsByUserId(int id)
+        {
+            return _context.Comments.Where(x => x.UserId == id);
+        }
+
         public async Task CreateAsync(Comment comment)
         {
             _context.Comments.Add(comment);
+            await SaveAsync();
+        }
+
+        public async Task DeleteAllByProductId(int Id)
+        {
+            var coms = _context.Comments.Where(x => x.ProductId == Id);
+            _context.Comments.RemoveRange(coms);
+            await SaveAsync();
+        }
+
+        public async Task DeleteAllByUserId(int Id)
+        {
+            var coms = _context.Comments.Where(x => x.UserId == Id);
+            _context.Comments.RemoveRange(coms);
             await SaveAsync();
         }
 

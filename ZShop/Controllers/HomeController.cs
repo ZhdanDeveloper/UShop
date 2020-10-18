@@ -60,7 +60,7 @@ namespace ZShop.Controllers
 
             return View(Product);
         }
-
+        [Authorize]
         [HttpPost("AddComment")]
         public async Task<IActionResult> AddComment(Comment comment)
         {

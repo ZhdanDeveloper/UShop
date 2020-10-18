@@ -18,10 +18,12 @@ namespace ZShop.Models.Account
         public decimal Price { get; set; }
         [Required]
         public int CategoryId { get; set; }
+        [Required]
         public IFormFile ImageUrl { get; set; }
         public IFormFile ImageUrl_1 { get; set; }
         public IFormFile ImageUrl_2 { get; set; }
         public IFormFile ImageUrl_3 { get; set; }
+        [Required]
         public IFormFile ImageUrlShowCase { get; set; }
         [Required]
         public string Model { get; set; }
