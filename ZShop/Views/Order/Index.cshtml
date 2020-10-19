@@ -28,42 +28,42 @@
                 <div class="control-group">
                     <label asp-for="PersonFirstName" class="control-label">Имя</label>
                     <div class="controls">
-                        <input asp-for="PersonFirstName" class="form-control" />
+                        <input asp-for="PersonFirstName" class="form-control" required/>
                     </div>
                     <span asp-validation-for="PersonFirstName" class="text-danger"></span>
                 </div>
                 <div class="control-group">
                     <label asp-for="PersonLastName" class="control-label">Фамилмя</label>
                     <div class="controls">
-                        <input asp-for="PersonLastName" class="form-control" />
+                        <input asp-for="PersonLastName" class="form-control" required/>
                     </div>
                     <span asp-validation-for="PersonLastName" class="text-danger"></span>
                 </div>
                 <div class="control-group">
                     <label class="control-label" asp-for="Phone">Телефон</label>
                     <div class="controls">
-                        <input asp-for="Phone" class="form-control" required="required">
+                        <input asp-for="Phone" class="form-control"  required>
                     </div>
                     <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
                 <div class="control-group">
                     <label asp-for="Region" class="control-label">Область</label>
                     <div class="controls">
-                        <input asp-for="Region" class="form-control" />
+                        <input asp-for="Region" class="form-control" required/>
                     </div>
                     <span asp-validation-for="Region" class="text-danger"></span>
                 </div>
                 <div class="control-group">
                     <label asp-for="City" class="control-label">Город</label>
                     <div class="controls">
-                        <input asp-for="City" class="form-control" />
+                        <input asp-for="City" class="form-control" required/>
                     </div>
                     <span asp-validation-for="City" class="text-danger"></span>
                 </div>
                 <div class="control-group">
                     <label asp-for="PostOfiice" class="control-label">Отделение новой почтой</label>
                     <div class="controls">
-                        <input asp-for="PostOfiice" class="form-control" />
+                        <input asp-for="PostOfiice" class="form-control" required/>
                     </div>
                     <span asp-validation-for="PostOfiice" class="text-danger"></span>
                 </div>

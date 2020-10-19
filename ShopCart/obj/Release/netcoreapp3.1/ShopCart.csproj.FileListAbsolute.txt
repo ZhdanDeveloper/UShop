@@ -12,3 +12,17 @@ C:\Users\Zhdan\source\repos\ZShop\ShopCart\obj\Release\netcoreapp3.1\ShopCart.cs
 C:\Users\Zhdan\source\repos\ZShop\ShopCart\obj\Release\netcoreapp3.1\ShopCart.csproj.CopyComplete
 C:\Users\Zhdan\source\repos\ZShop\ShopCart\obj\Release\netcoreapp3.1\ShopCart.dll
 C:\Users\Zhdan\source\repos\ZShop\ShopCart\obj\Release\netcoreapp3.1\ShopCart.pdb
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\ShopCart.deps.json
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\ShopCart.dll
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\ShopCart.pdb
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\Entities.dll
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\ZShop.Persistence.dll
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\Entities.pdb
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\bin\Release\netcoreapp3.1\ZShop.Persistence.pdb
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.csprojAssemblyReference.cache
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.AssemblyInfoInputs.cache
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.AssemblyInfo.cs
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.csproj.CopyComplete
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.dll
+C:\Users\Zhdan\Source\Repos\ZShop1\ShopCart\obj\Release\netcoreapp3.1\ShopCart.pdb

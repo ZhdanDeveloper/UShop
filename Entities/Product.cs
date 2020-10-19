@@ -14,22 +14,21 @@ namespace Entities
         [Required]
         public string Name { get; set; }
         [Required]
-        public string Description { get; set; }      
+        public string Description { get; set; }
         [Required]
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }      
+        public Category Category { get; set; }
         [Required]
         public string ImageUrl { get; set; }
-       
+
         public string ImageUrl_1 { get; set; }
-        
+
         public string ImageUrl_2 { get; set; }
-        
+
         public string ImageUrl_3 { get; set; }
-        [Required]
-        public string ImageUrlShowCase { get; set; }
+
         [Required]
         public string Model { get; set; }
         [Required]

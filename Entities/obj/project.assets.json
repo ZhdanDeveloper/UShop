@@ -105,11 +105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
+      "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\Entities\\Entities.csproj",
       "projectName": "Entities",
-      "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\Entities.csproj",
+      "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\Entities\\Entities.csproj",
       "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop\\Entities\\obj\\",
+      "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\Entities\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",

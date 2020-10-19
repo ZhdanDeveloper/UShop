@@ -14,59 +14,59 @@
 
 
 
-    <div class="span9">
-        <ul class="breadcrumb">
-            <li><a asp-action="Index" asp-controller="Home">Главная</a> <span class="divider">/</span></li>
-            <li class="active"> Корзина</li>
-        </ul>
-        <h3>  Корзина<a asp-controller="Home" asp-action="Index" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Продолжить покупки </a></h3>
-        <hr class="soft" />
+<div class="span9">
+    <ul class="breadcrumb">
+        <li><a asp-action="Index" asp-controller="Home">Главная</a> <span class="divider">/</span></li>
+        <li class="active"> Корзина</li>
+    </ul>
+    <h3>  Корзина<a asp-controller="Home" asp-action="Index" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Продолжить покупки </a></h3>
+    <hr class="soft" />
 
 
-        <table class="table table-bordered">
-            <thead>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Товар</th>
+                <th>Описание</th>
+                <th>Количество</th>
+                <th>Цена</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.shopCart.ShopItemsList)
+            {
                 <tr>
-                    <th>Товар</th>
-                    <th>Описание</th>
-                    <th>Количество</th>
-                    <th>Цена</th>
+                    @{var t = item.price * item.amount;}
+                    <td> <img width="60" src="@item.Product.ImageUrl" alt="" /></td>
+                    <td>@item.Product.Name<br /></td>
+                    <td>
+                        <div class="input-append"><input class="span1" style="max-width:34px" placeholder="@item.amount" id="appendedInputButtons" size="16" type="text"><a class="btn" asp-controller="ShopCart" asp-action="RemoveAmount" asp-route-id="@item.Id" type="submit"><i class="icon-minus"></i></a><a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Product.Id" class="btn" type="submit"><i class="icon-plus"></i></a><a class="btn btn-danger" asp-controller="ShopCart" asp-action="RemoveFromCart" asp-route-id="@item.Id"><i class="icon-remove icon-white"></i></a>				</div>
+                    </td>
+                    <td>@t</td>
+
 
                 </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.shopCart.ShopItemsList)
-                {
-                    <tr>
-                        @{var t = item.price * item.amount;}
-                        <td> <img width="60" src="@item.Product.ImageUrlShowCase" alt="" /></td>
-                        <td>@item.Product.Name<br /></td>
-                        <td>
-                            <div class="input-append"><input class="span1" style="max-width:34px" placeholder="@item.amount" id="appendedInputButtons" size="16" type="text"><a class="btn" asp-controller="ShopCart" asp-action="RemoveAmount" asp-route-id="@item.Id" type="submit"><i class="icon-minus"></i></a><a asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Product.Id" class="btn" type="submit"><i class="icon-plus"></i></a><a class="btn btn-danger" asp-controller="ShopCart" asp-action="RemoveFromCart" asp-route-id="@item.Id"><i class="icon-remove icon-white"></i></a>				</div>
-                        </td>
-                        <td>@t</td>
 
-
-                    </tr>
-
-                }
-                <tr>
-                    <td colspan="6" style="text-align:right"><strong>Финальная цена  =</strong></td>
-                    <td class="label label-important" style="display:block"> <strong> @total грн </strong></td>
-                </tr>
-            </tbody>
-        </table>
+            }
+            <tr>
+                <td colspan="6" style="text-align:right"><strong>Финальная цена  =</strong></td>
+                <td class="label label-important" style="display:block"> <strong> @total грн </strong></td>
+            </tr>
+        </tbody>
+    </table>
 
 
 
-        @if (total == 0)
-        {
-            <a class="btn btn-danger disabled"><i class="icon-arrow-left"></i> Очистить корзину </a>
-            <a class="btn btn-large pull-right disabled">Купить <i class="icon-arrow-right"></i></a>
-        }
-        else
-        {
-            <a asp-controller="ShopCart" asp-action="ClearCart" class="btn btn-danger"><i class="icon-arrow-left"></i> Очистить корзину </a>
-            <a asp-controller="Order" asp-action="Index" class="btn btn-large pull-right">Купить <i class="icon-arrow-right"></i></a>
-        }
-    
-    </div>
+    @if (total == 0)
+    {
+        <a class="btn btn-danger disabled"><i class="icon-arrow-left"></i> Очистить корзину </a>
+        <a class="btn btn-large pull-right disabled">Купить <i class="icon-arrow-right"></i></a>
+    }
+    else
+    {
+        <a asp-controller="ShopCart" asp-action="ClearCart" class="btn btn-danger"><i class="icon-arrow-left"></i> Очистить корзину </a>
+        <a asp-controller="Order" asp-action="Index" class="btn btn-large pull-right">Купить <i class="icon-arrow-right"></i></a>
+    }
+
+</div>

@@ -18,7 +18,7 @@ using ZShop.Services.Interfaces;
 
 namespace ZShop.Controllers
 {
-        
+
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -48,11 +48,8 @@ namespace ZShop.Controllers
         {
             return View();
         }
-        
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+
+
         [HttpGet("ViewProduct/{id}")]
         public IActionResult ViewProduct(int id)
         {
@@ -69,9 +66,31 @@ namespace ZShop.Controllers
             comment.UserId = Convert.ToInt32(User.FindFirst("Id").Value);
             await _comentService.CreateAsync(comment);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ViewProduct", "Home", new { id = comment.ProductId });
+
         }
 
+        [Authorize]
+        [HttpGet("DeleteOwnComment")]
+        public async Task<IActionResult> DeleteOwnComment(int id)
+        {
+            var comment = _comentService.CommentById(id);
+
+            if (comment.UserId == Convert.ToInt32(User.FindFirst("Id").Value) && comment != null)
+            {
+                await _comentService.DeleteOneByCommentIdAsync(id);
+            }
+
+            return RedirectToAction("ViewProduct", "Home", new { id = comment.ProductId });
+        }
+
+
+
+        [HttpGet("Contacts")]
+        public IActionResult Contacts()
+        {
+            return View();
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

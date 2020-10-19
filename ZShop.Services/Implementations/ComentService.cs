@@ -17,11 +17,11 @@ namespace ZShop.Services.Implementations
         {
             _context = context;
         }
-       
+
 
         public IEnumerable<Comment> CommentsByProductId(int id)
         {
-            return _context.Comments.Where(x=>x.ProductId == id);
+            return _context.Comments.Where(x => x.ProductId == id);
         }
 
         public IEnumerable<Comment> CommentsByUserId(int id)
@@ -54,10 +54,27 @@ namespace ZShop.Services.Implementations
             _context.Comments.Remove(comment);
             await SaveAsync();
         }
+        public async Task DeleteOneByCommentIdAsync(int id)
+        {
+            var comment = _context.Comments.FirstOrDefault(x => x.Id == id);
+            _context.Comments.Remove(comment);
+            await SaveAsync();
+        }
+        public int GetProductIdByCommentId(int id)
+        {
+            var comment = _context.Comments.FirstOrDefault(x => x.Id == id);
+            return comment.ProductId;
+        }
+        public Comment CommentById(int id)
+        {
+            return _context.Comments.FirstOrDefault(x => x.Id == id);
 
+        }
         public async Task SaveAsync()
         {
             await _context.SaveChangesAsync();
         }
+
+
     }
 }

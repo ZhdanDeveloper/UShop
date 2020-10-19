@@ -7,108 +7,102 @@
 
 
 
-    <div class="span9" style="width:100px;">
-        <div class="span9">
-            <form method="post" enctype="multipart/form-data" asp-action="Create" asp-controller="Admin">
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <div class="form-group">
-                    <label asp-for="Name">Название</label>
-                    <input asp-for="Name" class="form-control" placeholder="Название..." />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Price">Цена</label>
-                    <input asp-for="Price" class="form-control" placeholder="Цена" />
-                    <span asp-validation-for="Price" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="CategoryId">Категория</label>
-                    <select class="form-control" id="single_select" asp-for="CategoryId">
-                        @await Component.InvokeAsync("CategoryList")
-                    </select>
-                </div>
+<div class="span9" style="width:100px;">
+    <div class="span9">
+        <form method="post" enctype="multipart/form-data" asp-action="Create" asp-controller="Admin">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name">Название</label>
+                <input asp-for="Name" class="form-control" placeholder="Название..." />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price">Цена</label>
+                <input asp-for="Price" class="form-control" placeholder="Цена" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId">Категория</label>
+                <select class="form-control" id="single_select" asp-for="CategoryId">
+                    @await Component.InvokeAsync("CategoryList")
+                </select>
+            </div>
 
-                <div class="form-group">
-                    <label asp-for="Description">Описание</label>
+            <div class="form-group">
+                <label asp-for="Description">Описание</label>
 
-                    <textarea name="Description" id="Description"
-                              rows="5" cols="40"
-                              data-val-required="The Description field is required."
-                              data-val-maxlength-max="5000"
-                              data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
-                              data-val="true" asp-for="Description">
+                <textarea name="Description" id="Description"
+                          rows="5" cols="40"
+                          data-val-required="The Description field is required."
+                          data-val-maxlength-max="5000"
+                          data-val-maxlength="The field Description must be a string or array type with a maximum length of '5000'."
+                          data-val="true" asp-for="Description">
 
                 </textarea>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Brand">Фирма</label>
-                    <input asp-for="Brand" class="form-control" placeholder="Фирма..." />
-                    <span asp-validation-for="Brand" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Model">Модель</label>
-                    <input asp-for="Model" class="form-control" placeholder="Модель..." />
-                    <span asp-validation-for="Model" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrl">Главное фото на странице товара</label>
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <input asp-for="ImageUrl" type="file" value="Upload" />
-                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrl_1">Первое подфото на странице товара</label>
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <input asp-for="ImageUrl_1" type="file" value="Upload" />
-                    <span asp-validation-for="ImageUrl_1" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrl_2">Второе подфото на странице товара</label>
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <input asp-for="ImageUrl_2" type="file" value="Upload" />
-                    <span asp-validation-for="ImageUrl_2" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrl_3">Третье подфото на странице товара</label>
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <input asp-for="ImageUrl_3" type="file" value="Upload" />
-                    <span asp-validation-for="ImageUrl_3" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="ImageUrlShowCase">Фото для домашней страници размер(250 x 220)</label>
-                    <i class="fas fa-cloud-upload-alt"></i>
-                    <input asp-for="ImageUrlShowCase" type="file" value="Upload" />
-                    <span asp-validation-for="ImageUrlShowCase" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Добавить" class="btn btn-primary" />
-                </div>
-            </form>
-        </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Brand">Фирма</label>
+                <input asp-for="Brand" class="form-control" placeholder="Фирма..." />
+                <span asp-validation-for="Brand" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Model">Модель</label>
+                <input asp-for="Model" class="form-control" placeholder="Модель..." />
+                <span asp-validation-for="Model" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl">Главное фото на странице товара</label>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <input asp-for="ImageUrl" type="file" value="Upload" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl_1">Первое подфото на странице товара</label>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <input asp-for="ImageUrl_1" type="file" value="Upload" />
+                <span asp-validation-for="ImageUrl_1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl_2">Второе подфото на странице товара</label>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <input asp-for="ImageUrl_2" type="file" value="Upload" />
+                <span asp-validation-for="ImageUrl_2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl_3">Третье подфото на странице товара</label>
+                <i class="fas fa-cloud-upload-alt"></i>
+                <input asp-for="ImageUrl_3" type="file" value="Upload" />
+                <span asp-validation-for="ImageUrl_3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Добавить" class="btn btn-primary" />
+            </div>
+        </form>
     </div>
+</div>
 
- 
 
 
-    <script>
-        $('#data_source_single').multiselect({
-            onInitialized: function (select, container) {
-                container.multiselect('dataprovider', options2);
-                container.multiselect('setOptions', {
-                    nonSelectedText: 'Select a pooch...',
-                    enableFiltering: true,
-                    filterBehavior: 'both',
-                    enableCaseInsensitiveFiltering: true,
-                    templates: {
-                        li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>',
-                        filter: '<li class="multiselect-item filter"><div class="input-group m-0 mb-1"><input class="form-control multiselect-search" type="text"></div></li>',
-                        filterClearBtn: '<div class="input-group-append"><button class="btn btn btn-outline-secondary multiselect-clear-filter" type="button"><i class="fa fa-close"></i></button></div>'
-                    },
-                    selectedClass: 'bg-light',
-                });
-                container.multiselect('rebuild');
-                $('input[type=radio]').addClass('d-none');
-            }
-        });
 
-    </script>
+<script>
+    $('#data_source_single').multiselect({
+        onInitialized: function (select, container) {
+            container.multiselect('dataprovider', options2);
+            container.multiselect('setOptions', {
+                nonSelectedText: 'Select a pooch...',
+                enableFiltering: true,
+                filterBehavior: 'both',
+                enableCaseInsensitiveFiltering: true,
+                templates: {
+                    li: '<li><a href="javascript:void(0);"><label class="pl-2"></label></a></li>',
+                    filter: '<li class="multiselect-item filter"><div class="input-group m-0 mb-1"><input class="form-control multiselect-search" type="text"></div></li>',
+                    filterClearBtn: '<div class="input-group-append"><button class="btn btn btn-outline-secondary multiselect-clear-filter" type="button"><i class="fa fa-close"></i></button></div>'
+                },
+                selectedClass: 'bg-light',
+            });
+            container.multiselect('rebuild');
+            $('input[type=radio]').addClass('d-none');
+        }
+    });
+
+</script>

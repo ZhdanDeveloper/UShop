@@ -36,26 +36,27 @@
                         <div class="span4">
                             <div class="well">
                                 <h5>Уже зарегистрирован?</h5>
-                                <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
-                                    <div class="control-group" >
-                                        <label asp-for="Password" class="control-label" for="inputEmail1">Войти</label>
+                                <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true" as>
+                                    <div class="control-group">
+                                        <label asp-for="Name" class="control-label" for="inputEmail1">Войти</label>
                                         <div class="controls">
-                                            <input asp-for="Name" class="span3" type="text" id="inputEmail1" placeholder="Логин">
+                                            <input asp-for="Name" class="span3" type="text" id="inputEmail1" placeholder="Логин" required>
                                             <span asp-validation-for="Name" class="text-danger"></span>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" asp-for="Password">Пароль</label>
                                         <div class="controls">
-                                            <input asp-for="Password" type="password" class="span3" id="inputPassword1" placeholder="Пароль">
+                                            <input asp-for="Password" type="password" class="span3" id="inputPassword1" placeholder="Пароль" required>
                                             <span asp-validation-for="Password" class="text-danger"></span>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="controls">
-                                            <button type="submit" class="btn">Войти</button> 
+                                            <button type="submit" class="btn">Войти</button>
                                         </div>
                                     </div>
+                                    <div style="color:red;" class="validation" asp-validation-summary="ModelOnly"></div>
                                 </form>
                             </div>
                         </div>

@@ -12,6 +12,9 @@ namespace ZShop.Services.Interfaces
         Task DeleteAsync(Comment comment);
         Task DeleteAllByUserId(int Id);
         Task DeleteAllByProductId(int Id);
+        Task DeleteOneByCommentIdAsync(int id);
+        int GetProductIdByCommentId(int id);
+        Comment CommentById(int id);
         IEnumerable<Comment> CommentsByProductId(int id);
         IEnumerable<Comment> CommentsByUserId(int id);
         Task SaveAsync();

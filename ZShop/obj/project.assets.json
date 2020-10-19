@@ -9352,11 +9352,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop\\ZShop.csproj",
+      "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop\\ZShop.csproj",
       "projectName": "ZShop",
-      "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop\\ZShop.csproj",
+      "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop\\ZShop.csproj",
       "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop\\obj\\",
+      "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9372,14 +9372,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ShopCart\\ShopCart.csproj": {
-              "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ShopCart\\ShopCart.csproj"
+            "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ShopCart\\ShopCart.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ShopCart\\ShopCart.csproj"
             },
-            "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj": {
-              "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Persistence\\ZShop.Persistence.csproj"
+            "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop.Persistence\\ZShop.Persistence.csproj"
             },
-            "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj": {
-              "projectPath": "C:\\Users\\Zhdan\\source\\repos\\ZShop\\ZShop.Services\\ZShop.Services.csproj"
+            "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop.Services\\ZShop.Services.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop.Services\\ZShop.Services.csproj"
             }
           }
         }

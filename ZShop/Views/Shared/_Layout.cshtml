@@ -62,14 +62,13 @@
                         <button type="submit" id="submitButton" class="btn btn-primary">Искать</button>
                     </form>
                     <ul id="topMenu" class="nav pull-right">
-                        @if (User.IsInRole("Admin"))
+                        @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin"))
                         {
                             <li class=""><a asp-action="AdminPanel" asp-controller="Admin">Админ панель</a></li>
                         }
 
-                        <li class=""><a asp-action="AllCategories" asp-controller="Home">Категории</a></li>
-                        <li class=""><a href="normal.html">О нас</a></li>
-                        <li class=""><a href="contact.html">Контакты</a></li>
+                        <li class=""><a asp-action="AllCategories" asp-controller="Home">Категории</a></li>                       
+                        <li class=""><a asp-action="Contacts" asp-controller="Home">Контакты</a></li>
                         <li class="">
                             @if (User.Identity.IsAuthenticated)
                             {

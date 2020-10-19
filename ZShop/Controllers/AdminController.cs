@@ -20,7 +20,7 @@ using ZShop.Services.Interfaces;
 namespace ZShop.Controllers
 {
     [Route("Admin")]
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class AdminController : Controller
     {
         private readonly IProductService _productService;
@@ -45,7 +45,7 @@ namespace ZShop.Controllers
             _comentService = comentService;
         }
 
-  
+
         [HttpGet("AdminPanel")]
 
         public IActionResult AdminPanel()
@@ -53,14 +53,14 @@ namespace ZShop.Controllers
             return View();
         }
 
-   
+
         [HttpGet("Create")]
         public IActionResult Create()
         {
-          
+
             return View();
         }
-   
+
         [HttpPost("Create")]
         [ValidateAntiForgeryToken] //Prevents cross-site Request Forgery Attacks
         public async Task<IActionResult> Create(ProductViewModel modell)
@@ -76,19 +76,19 @@ namespace ZShop.Controllers
                     Price = modell.Price,
                     Brand = modell.Brand,
                     Model = modell.Model
-                   
+
 
 
                 };
-                if (modell.ImageUrl != null && modell.ImageUrl.Length > 0 && modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length >0)
+                if (modell.ImageUrl != null && modell.ImageUrl.Length > 0)
                 {
 
                     product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
                     product.ImageUrl_1 = product.ImageUrl_1 == null ? null : await UploadFile(@"images/prods_one", modell.ImageUrl_1);
                     product.ImageUrl_2 = product.ImageUrl_2 == null ? null : await UploadFile(@"images/prods_two", modell.ImageUrl_2);
                     product.ImageUrl_3 = product.ImageUrl_3 == null ? null : await UploadFile(@"images/prods_three", modell.ImageUrl_3);
-                    product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
-                   
+
+
 
                 }
                 await _productService.CreateAsync(product);
@@ -100,7 +100,7 @@ namespace ZShop.Controllers
         public IActionResult Edit(int id)
         {
             var product = _productService.GetById(id);
-            var modell = new ProductViewModel
+            var modell = new EditProductViewModel
             {
                 Brand = product.Brand,
                 Price = product.Price,
@@ -109,19 +109,19 @@ namespace ZShop.Controllers
                 CategoryId = product.CategoryId,
                 Description = product.Description,
                 Name = product.Name
-                
-               
+
+
             };
-          
+
 
             return View(modell);
         }
         [HttpPost]
-        public async Task<IActionResult> Edit(ProductViewModel modell)
+        public async Task<IActionResult> Edit(EditProductViewModel modell)
         {
             if (ModelState.IsValid)
             {
-                
+
                 var product = _productService.GetById(modell.Id);
                 product.Name = modell.Name;
                 product.Price = modell.Price;
@@ -129,7 +129,7 @@ namespace ZShop.Controllers
                 product.Brand = modell.Brand;
                 product.CategoryId = modell.CategoryId;
                 product.Model = modell.Model;
-               
+
 
 
                 if (modell.ImageUrl != null && modell.ImageUrl.Length > 0)
@@ -138,11 +138,6 @@ namespace ZShop.Controllers
                     DeleteFile(product.ImageUrl);
                     product.ImageUrl = await UploadFile(@"images/prods", modell.ImageUrl);
 
-                }
-                if (modell.ImageUrlShowCase != null && modell.ImageUrlShowCase.Length > 0)
-                {
-                    DeleteFile(product.ImageUrlShowCase);
-                    product.ImageUrlShowCase = await UploadFile(@"images/showcase", modell.ImageUrlShowCase);
                 }
                 if (modell.ImageUrl_1 != null && modell.ImageUrl_1.Length > 0)
                 {
@@ -165,7 +160,8 @@ namespace ZShop.Controllers
             return View();
         }
         [HttpGet("Detail")]
-        public IActionResult AddDeatail(int id) {
+        public IActionResult AddDeatail(int id)
+        {
 
             var detail = new DetailViewModel
             {
@@ -187,20 +183,20 @@ namespace ZShop.Controllers
 
             await _detailService.AddDetail(detail);
 
-            return RedirectToAction("ViewProduct", "Home", new {id = modell.ProductId});
+            return RedirectToAction("ViewProduct", "Home", new { id = modell.ProductId });
         }
         [HttpGet("EditDetail")]
         public IActionResult EditDetail(int id)
         {
             var detail = _detailService.DetailById(id);
-          
+
             return View(detail);
 
         }
         [HttpGet("AddCategory")]
         public IActionResult AddCategory()
         {
-          
+
             return View();
 
         }
@@ -223,13 +219,13 @@ namespace ZShop.Controllers
 
                 return RedirectToAction("Index", "Home");
             }
-           
-            return RedirectToAction("AllCategories","Home");
+
+            return RedirectToAction("AllCategories", "Home");
         }
         [HttpGet("EditCategory")]
         public IActionResult EditCategory(int id)
         {
-            var category =  _categoryService.GetById(id);
+            var category = _categoryService.GetById(id);
             return View(category);
         }
         [HttpPost("EditCategory")]
@@ -247,7 +243,7 @@ namespace ZShop.Controllers
 
             _detail.Name = detail.Name;
             _detail.Description = detail.Description;
-           await _detailService.UpdateAsync(_detail);
+            await _detailService.UpdateAsync(_detail);
 
             return RedirectToAction("ViewProduct", "Home", new { id = _detail.ProductId });
 
@@ -255,38 +251,38 @@ namespace ZShop.Controllers
         [HttpGet("RemoveDetail/{id}")]
         public async Task<IActionResult> RemoveDetail(int id, int ProductId)
         {
-            
+
 
             await _detailService.RemoveByIdAsync(id);
 
 
-            return RedirectToAction("ViewProduct", "Home", new {id= ProductId });
+            return RedirectToAction("ViewProduct", "Home", new { id = ProductId });
 
         }
 
         [HttpGet("Orders")]
         public async Task<IActionResult> Orders(int? pageNumber = 1)
         {
-           
+
             var orders = _orderService.GetAll();
 
             int pageSize = 7;
             return View(await PaginatedList<Order>.CreateAsync(orders.AsNoTracking(), pageNumber ?? 1, pageSize));
-          
-           
+
+
         }
-        
+
         [HttpGet("DeleteOrder")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
             var order = _orderService.FindById(id);
-             await _orderService.DeleteAsync(order);
-            return RedirectToAction("Orders","Admin");
+            await _orderService.DeleteAsync(order);
+            return RedirectToAction("Orders", "Admin");
         }
         [HttpGet("Search")]
         public async Task<IActionResult> Search(string SearchString, int? pageNumber, string currentFilter)
         {
- 
+
             var orders = _orderService.GetListByPhone(SearchString);
             if (orders == null)
             {
@@ -326,7 +322,7 @@ namespace ZShop.Controllers
             return View(await PaginatedList<User>.CreateAsync(users.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
-
+        [Authorize(Roles = "SuperAdmin")]
         [HttpGet("ChangeRole")]
         public async Task<IActionResult> ChangeRole(string role, int id)
         {
@@ -351,11 +347,24 @@ namespace ZShop.Controllers
         [HttpGet("DeleteUser")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            if (_comentService.CommentsByUserId(id) != null)
+
+            if (User.IsInRole("SuperAdmin") && ((_userService.GetById(id).Role == "User") || (_userService.GetById(id).Role == "Admin")))
             {
-               await _comentService.DeleteAllByUserId(id);
+                await _userService.Delete(id);
+                if (_comentService.CommentsByUserId(id) != null)
+                {
+                    await _comentService.DeleteAllByUserId(id);
+                }
             }
-            await _userService.Delete(id);
+            else if (User.IsInRole("Admin") && _userService.GetById(id).Role == "User")
+            {
+                await _userService.Delete(id);
+                if (_comentService.CommentsByUserId(id) != null)
+                {
+                    await _comentService.DeleteAllByUserId(id);
+                }
+            }
+
             return RedirectToAction("GetUsers", "Admin");
 
 
@@ -402,14 +411,28 @@ namespace ZShop.Controllers
             }
             _shopCart.DeletItemFromEveryCart(id);
             DeleteFile(prod.ImageUrl);
-            DeleteFile(prod.ImageUrlShowCase);
             DeleteFile(prod.ImageUrl_1);
             DeleteFile(prod.ImageUrl_2);
             DeleteFile(prod.ImageUrl_3);
-         
-            
-            await _productService.DeleteAsync(prod);
+
+            try
+            {
+                await _productService.DeleteAsync(prod);
+            }
+            catch (Exception)
+            {
+
+                return PartialView("Error");
+            }
+
             return RedirectToAction("Index", "Home");
+        }
+        [HttpGet("DeleteComment")]
+        public async Task<IActionResult> DeleteComment(int id)
+        {
+            var prodId = _comentService.GetProductIdByCommentId(id);
+            await _comentService.DeleteOneByCommentIdAsync(id);
+            return RedirectToAction("ViewProduct", "Home", new { id = prodId });
         }
 
         private async Task<string> UploadFile(string uploadDir, IFormFile ModelFileVarName)
@@ -438,12 +461,12 @@ namespace ZShop.Controllers
             if (System.IO.File.Exists("wwwroot" + fullPath))
             {
                 System.IO.File.Delete("wwwroot" + fullPath);
-                
+
             }
         }
     }
-}  
+}
 
 
-    
+
 

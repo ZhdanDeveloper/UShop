@@ -15,7 +15,7 @@
         <ul class="nav nav-tabs nav-stacked" style="width :120px">
             @foreach (var category in Model)
             {
-                @if (User.IsInRole("Admin"))
+                @if (User.IsInRole("Admin") || User.IsInRole("SuperAdmin"))
                 {
                     <a asp-action="RemoveCategory" asp-controller="Admin" asp-route-id="@category.Id" style="color:red;">Удалить ↓</a>
                     <a asp-action="EditCategory" asp-controller="Admin" asp-route-id="@category.Id" style="color:green;">Редактировать ↓</a>
@@ -32,6 +32,6 @@
 
         </ul>
 
-        </div>
-        </body>
+    </div>
+</body>
 </html>

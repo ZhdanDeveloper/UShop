@@ -18,10 +18,10 @@ using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 
 namespace ZShop.Controllers
 {
-    
+
     public class AccountController : Controller
     {
-        
+
         private IUserService _userService;
         private ZShopContext _context;
         public AccountController(IUserService userService, ZShopContext context)
@@ -42,11 +42,11 @@ namespace ZShop.Controllers
         {
             if (ModelState.IsValid)
             {
-                
+
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
                 if (user != null && PasswordManager.VerifyPasswordHash(model.Password, user.Password))
                 {
-                   
+
                     await Authenticate(model.Name); // аутентификация
 
                     return RedirectToAction("Index", "Home");
@@ -67,13 +67,13 @@ namespace ZShop.Controllers
         {
             if (ModelState.IsValid)
             {
-               
+
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
                 if (user == null)
                 {
                     var passwordHSH = PasswordManager.GeneratePasswordHash(model.Password);
                     // добавляем пользователя в бд
-                    await _userService.CreateAsync(new User { Email = model.Email, Password = passwordHSH, Name = model.Name, Role = "User", Phone = model.Phone });
+                    await _userService.CreateAsync(new User { Email = model.Email, Password = passwordHSH, Name = model.Name, Role = "User", Phone = model.Phone.StartsWith("+380") ? model.Phone : "+38" + model.Phone });
                     //_context.Users.Add(new User { Email = model.Email, Password = model.Password, Name= model.Name });
 
 
@@ -86,12 +86,12 @@ namespace ZShop.Controllers
             }
             return View(model);
         }
-      
+
         private async Task Authenticate(string Name)
         {
 
             User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == Name);
-           
+
             var claims = new List<Claim>
             {
                new Claim(ClaimTypes.Email, user.Email),
