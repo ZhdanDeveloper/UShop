@@ -44,14 +44,27 @@ namespace ZShop.Controllers
             {
 
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
-                if (user != null && PasswordManager.VerifyPasswordHash(model.Password, user.Password))
+
+                if (user == null)
+                {
+
+                    ModelState.AddModelError("", "Неправильно введенный логин");
+                    return View(model);
+                }
+                else if (!PasswordManager.VerifyPasswordHash(model.Password, user.Password))
+                {
+
+                    ModelState.AddModelError("", "Неправильно введенный пароль");
+                    return View(model);
+                }
+                else if (user != null && PasswordManager.VerifyPasswordHash(model.Password, user.Password))
                 {
 
                     await Authenticate(model.Name); // аутентификация
 
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError("", "incorrect data");
+               
             }
             return View(model);
         }
@@ -69,8 +82,12 @@ namespace ZShop.Controllers
             {
 
                 User user = await _context.Users.FirstOrDefaultAsync(u => u.Name == model.Name);
+                
                 if (user == null)
                 {
+
+                   
+
                     var passwordHSH = PasswordManager.GeneratePasswordHash(model.Password);
                     // добавляем пользователя в бд
                     await _userService.CreateAsync(new User { Email = model.Email, Password = passwordHSH, Name = model.Name, Role = "User", Phone = model.Phone.StartsWith("+380") ? model.Phone : "+38" + model.Phone });
@@ -82,8 +99,10 @@ namespace ZShop.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                    ModelState.AddModelError("", "incorrect data");
+                    ModelState.AddModelError("", "Такой пользователь уже существует");
+                    return View(model);
             }
+            ModelState.AddModelError("", "Введенные пароли должны быть одинаковыми");
             return View(model);
         }
 
