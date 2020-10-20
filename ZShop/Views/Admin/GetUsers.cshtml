@@ -1,0 +1,125 @@
+﻿@model ZShop.Models.Pagination.PaginatedList<Entities.User>
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+
+<style>
+    a.disabled {
+        pointer-events: none;
+        cursor: default;
+    }
+</style>
+
+
+
+<div class="span9">
+
+    <form class="form-inline navbar-search" asp-action="UserSearch" asp-controller="Admin" method="get">
+        <input class="srchTxt" type="text" name="SearchString" value="@ViewData["CurrentFilter2"]" placeholder="Поиск по имени пользователся" />
+        <button type="submit" id="submitButton" class="btn btn-primary">Искать</button>
+    </form>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Емейл</th>
+                <th>Роль</th>
+                <th>Действие 1</th>
+                <th>Действие 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                @if (item.Role == "Admin")
+                {
+                    <td>
+                       
+                       @if (this.User.FindFirst("Id").Value == Convert.ToString(item.Id) && User.IsInRole("SuperAdmin")) { }
+                       else if (this.User.FindFirst("Id").Value != Convert.ToString(item.Id) && User.IsInRole("SuperAdmin")) { <a asp-action="ChangeRole" asp-controller="Admin" asp-route-id="@item.Id" asp-route-role="@item.Role" style="color:red;">Снять админку</a>}
+                       else
+                       {
+                            <a>Недостаточно прав</a>
+                       }
+
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @if (this.User.FindFirst("Id").Value == Convert.ToString(item.Id) && User.IsInRole("SuperAdmin")) { }
+                        else if (this.User.FindFirst("Id").Value != Convert.ToString(item.Id) && User.IsInRole("SuperAdmin")) {<a asp-action="ChangeRole" asp-controller="Admin" asp-route-id="@item.Id" asp-route-role="@item.Role" style="color:red;">Назначить администратором</a>}                       
+                        else
+                        {
+                            <a>Недостаточно прав</a>
+                        }
+                    </td>
+                }
+                <td>
+                         @if ( this.User.FindFirst("Id").Value == Convert.ToString(item.Id) && User.IsInRole("SuperAdmin")) { }
+                         else if (this.User.FindFirst("Id").Value != Convert.ToString(item.Id) && User.IsInRole("SuperAdmin")) {<a asp-action="DeleteUser" asp-controller="Admin" asp-route-id="@item.Id" style="color:red;">Удалить пользователя</a> }
+                        
+                         else if (User.IsInRole("Admin") && item.Role == "User")
+                         {
+                             <a asp-action="DeleteUser" asp-controller="Admin" asp-route-id="@item.Id" style="color:red;">Удалить пользователя</a>
+                         }
+
+                         else
+                         {
+                       <a>Недостаточно прав</a>
+                         }
+                </td>
+
+
+
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+
+
+    @{
+        var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+        var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+    }
+
+    <a asp-action="GetUsers"
+       asp-route-pageNumber="@(Model.PageIndex - 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @prevDisabled">
+        Назад
+    </a>
+    <a asp-action="GetUsers"
+       asp-route-pageNumber="@(Model.PageIndex + 1)"
+       asp-route-currentFilter="@ViewData["CurrentFilter"]"
+       class="btn btn-default @nextDisabled">
+        Далее
+    </a>
+
+
+</div>

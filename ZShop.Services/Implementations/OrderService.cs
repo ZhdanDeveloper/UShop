@@ -35,10 +35,10 @@ namespace ZShop.Services.Implementations
                     PersonLastName = order.PersonLastName,
                     Phone = order.Phone,
                     PostOfiice = order.PostOfiice,
-                    ItemId = item.Product.Id,
+                    ProductId = item.Product.Id,
                     price = item.price * item.amount,
                     Quantity = item.amount,
-                    ItemName = item.Product.Name,
+                    ProductName = item.Product.Name,
                     OrderTime = time,
                     Region = order.Region
 

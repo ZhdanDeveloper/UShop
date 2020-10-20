@@ -126,12 +126,6 @@ namespace ZShop.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ItemId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ItemName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime2");
 
@@ -148,6 +142,12 @@ namespace ZShop.Persistence.Migrations
 
                     b.Property<string>("PostOfiice")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Quantity")

@@ -16,3 +16,12 @@ C:\Users\Zhdan\Source\Repos\ZShop1\Entities\obj\Debug\netcoreapp3.1\Entities.Ass
 C:\Users\Zhdan\Source\Repos\ZShop1\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
 C:\Users\Zhdan\Source\Repos\ZShop1\Entities\obj\Debug\netcoreapp3.1\Entities.dll
 C:\Users\Zhdan\Source\Repos\ZShop1\Entities\obj\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+C:\Users\Zhdan\Source\Repos\TESTAPPGIT\Entities\obj\Debug\netcoreapp3.1\Entities.pdb

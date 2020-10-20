@@ -21,8 +21,8 @@ namespace Entities
         public string PostOfiice { get; set; }
         public DateTime OrderTime { get; set; }
         //public Item Item { get; set; }
-        public int ItemId { get; set; }
-        public string ItemName { get; set; }
+        public int ProductId { get; set; }
+        public string ProductName { get; set; }
         [Column(TypeName = "decimal(18,2)")]
         public decimal price { get; set; }
         public int Quantity { get; set; }

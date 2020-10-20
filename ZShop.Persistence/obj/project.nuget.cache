@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wWel395I8c05p71KVe2JIQSx4hVU7bq6ly19wmGIdzTYlfOZsYYEi3dBFtMDCdw9S7DzMPwKWjbOyaMm59K3MA==",
+  "dgSpecHash": "IoRNgX8FaKLjhn7MRivd3nanU0zam4G+/GUdH3YAYpSTR6DSxBiMsw3NGK5guV63FpB5N64GUu7bqbF9ycAX8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ZShop.Persistence\\ZShop.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.7\\microsoft.aspnetcore.http.features.3.1.7.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

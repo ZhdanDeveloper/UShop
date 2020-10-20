@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ACcBAZjqlDLWJLUWBtwIKBJBpmMEVQPkAOki6USCpgWebNoEYVGxqoX3iCmtltIZo3kLAeqfm/0OhiL7sYrglQ==",
+  "dgSpecHash": "MXpUUF4obiIGkNX68gvsB93+qmm1es/d7zc21S+cx6cxQsv3ZM6Zg0sF48QemTZ+s7NmIXGrdlB2RAj7M8Z8RA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\ShopCart\\ShopCart.csproj",
+  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ShopCart\\ShopCart.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.7\\microsoft.aspnetcore.http.features.3.1.7.nupkg.sha512",

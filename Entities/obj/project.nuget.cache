@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "usm6zSCmyVV2PMDStZc1Xdp9ehVHS5dpsHNikMryuWHxagTfCxDGP8gKoj2K3eu2LNuSMt4+cCN0pzd8ijGTQQ==",
+  "dgSpecHash": "HSAJWw3hcU4ktav8IZOZwIdPSkrIYsw1Aics4DERe8+380AL1u+CbVTr0u5JLFSuekFfpoJcXACGaL2mj/OnKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\ZShop1\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.7\\microsoft.aspnetcore.http.features.3.1.7.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.7\\microsoft.extensions.primitives.3.1.7.nupkg.sha512",
