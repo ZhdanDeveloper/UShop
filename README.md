@@ -27,7 +27,8 @@
  
  ## Как развернуть проект у себя на ПК ##
  
- 1. ![image](https://user-images.githubusercontent.com/68823930/96573109-5c8d5680-12d6-11eb-9888-f87ccadfe64d.png)
+ ### 1. Копируем ссылку проекта с шитхаба ###
+ ![image](https://user-images.githubusercontent.com/68823930/96573109-5c8d5680-12d6-11eb-9888-f87ccadfe64d.png)
 
  
  
