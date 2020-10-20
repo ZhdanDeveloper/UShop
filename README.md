@@ -71,8 +71,15 @@
  ### 6. Всё остальное можно протестировать клонировав репозиторий ###
 
  
- 
- 
+   # Что использовалось #
+   1. C#
+   2. ASP.NET Core
+   3. Razor Pages
+   4. Bootsrap
+   5. Entity Framework
+   6. MS SQL
+   7. HTML
+   8. CSS
  
 
  
