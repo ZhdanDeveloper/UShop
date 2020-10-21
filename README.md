@@ -75,7 +75,7 @@
    2. ASP.NET Core
    3. Razor Pages
    4. Bootsrap
-   5. Entity Framework
+   5. Entity Framework Core
    6. MS SQL
    7. HTML
    8. CSS
