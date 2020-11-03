@@ -24,12 +24,13 @@ namespace ZShop.Controllers
             _shopCart = shopCart;
         }
 
+
         public async Task<IActionResult> Search(string SearchString, int? pageNumber, string currentFilter)
         {
-            var prods = _productService.GetListByName(SearchString);
+            var prods = _productService.GetListByName(SearchString == null ? currentFilter : SearchString);
             if (prods == null)
             {
-                     
+
             }
 
             if (SearchString != null)
@@ -48,7 +49,7 @@ namespace ZShop.Controllers
 
 
 
-            int pageSize = 3;
+            int pageSize = 9;
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
 
         }
@@ -61,6 +62,6 @@ namespace ZShop.Controllers
             return View(await PaginatedList<Product>.CreateAsync(prods.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
-        
+
     }
 }

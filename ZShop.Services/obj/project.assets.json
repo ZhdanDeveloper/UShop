@@ -5832,11 +5832,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Services\\ZShop.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Services\\ZShop.Services.csproj",
       "projectName": "ZShop.Services",
-      "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Services\\ZShop.Services.csproj",
+      "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Services\\ZShop.Services.csproj",
       "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Services\\obj\\",
+      "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Services\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5852,14 +5852,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj": {
-              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj"
+            "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj"
             },
-            "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ShopCart\\ShopCart.csproj": {
-              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ShopCart\\ShopCart.csproj"
+            "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ShopCart\\ShopCart.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ShopCart\\ShopCart.csproj"
             },
-            "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj": {
-              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj"
+            "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\ZShop.Persistence.csproj"
             }
           }
         }

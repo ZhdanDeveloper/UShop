@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj": {}
+    "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\ZShop.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj": {
+    "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\ZShop.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\ZShop.Persistence.csproj",
         "projectName": "ZShop.Persistence",
-        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\ZShop.Persistence.csproj",
+        "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\ZShop.Persistence.csproj",
         "packagesPath": "C:\\Users\\Zhdan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Zhdan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\Entities\\Entities.csproj"
+              "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\Entities\\Entities.csproj"
               }
             }
           }

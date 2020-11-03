@@ -5,6 +5,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <title>магазин електроинструмента - UnostShop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unost Shop - онлайн магазин електроинструментов. Здесь вы найдете различный електроинструмент по привлекательной цене">
+    <meta name="keywords" content="unost-shop, unostshop, UnostShop, магазин юность, електроинструмент, киев юность, купить електроинструмент, киев елктро, украина електроинструмент, киев инструмент, магазин електроинструментов,Купить электроинструмент от ТМ WORCRAFT, Фирменный интернет магазин, Аккумуляторный инструмент, инструмент киев, строительство, юностьшоп, юность шоп, ">
+    <meta name="keywords" content="купить електроинструмент киев онлайн магазин електроинструмента аккумулятор украина юность рынок"/>
+    <meta name="author" content="unost-shop - магазин електроинструментов">
+</head>
 <style>
     a.disabled {
         pointer-events: none;
@@ -32,11 +40,11 @@
                 {
                     <li class="span3">
                         <div class="thumbnail" >
-                            <img src="@Html.DisplayFor(x => item.ImageUrl)"style="width:250px; height:220px;" alt="" />
+                            <a asp-action="ViewProduct" asp-route-id="@item.Id"><img src="@Html.DisplayFor(x => item.ImageUrl)" style="width:250px; height:220px;" alt="" /></a>
                             <div class="caption">
-                                <a><h5>@Html.DisplayFor(x => item.Name)</h5></a>
+                                <a asp-action="ViewProduct" asp-route-id="@item.Id" style="text-decoration:none;"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
                                 <p>
-                                    <a asp-action="ViewProduct" asp-route-id="@item.Id">Осмотреть</a>
+                                    
 
                                 </p>
                                 

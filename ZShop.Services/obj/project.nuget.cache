@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dzWHeV/qFCYeHEogXNVAptVi83DuVAeaODVi9s4xDXlv5ipU1/Cw4u+PkCO5E/NvYyv4EIVQzSEW6C9xWmgjeg==",
+  "dgSpecHash": "sk+1QTWMBpORDUppLgMvPiFz4dKgKZudwQO32Wk5YkHD1UnY8+nUCmf4q2KlUXfHEWI2xITXDyLNFyf/+aIhRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\TESTAPPGIT\\ZShop.Services\\ZShop.Services.csproj",
+  "projectFilePath": "C:\\Users\\Zhdan\\Source\\Repos\\UShopRelease\\ZShop.Services\\ZShop.Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.2.0\\microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Zhdan\\.nuget\\packages\\microsoft.aspnetcore.http.features\\3.1.7\\microsoft.aspnetcore.http.features.3.1.7.nupkg.sha512",

@@ -35,13 +35,15 @@
                             {
                                 <li class="span3">
                                     <div class="thumbnail">
-                                        <img src="@Html.DisplayFor(x => item.ImageUrl)" style="width:250px; height:220px;" alt="" />
+                                        <a asp-action="ViewProduct" asp-controller="Home" asp-route-id="@item.Id"><img src="@Html.DisplayFor(x => item.ImageUrl)" style="width:250px; height:220px;" alt="" /></a>
                                         <div class="caption">
-                                            <h5>@Html.DisplayFor(x => item.Name)</h5>
+                                            <a asp-action="ViewProduct" asp-controller="Home" asp-route-id="@item.Id" style="text-decoration:none;"><h5>@Html.DisplayFor(x => item.Name)</h5></a>
                                             <p>
-                                                <a asp-controller="Home" asp-action="ViewProduct" asp-route-id="@item.Id">Осмотреть</a>
+
+
                                             </p>
-                                            <h4 style="text-align:center"><a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Add to <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@item.Price грн</a></h4>
+
+                                            <h4 style="text-align:center"> <a class="btn" asp-controller="ShopCart" asp-action="AddToCart" asp-route-id="@item.Id">Добавить в <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">@Html.DisplayFor(x => item.Price) грн</a></h4>
                                         </div>
                                     </div>
                                 </li>
@@ -52,9 +54,9 @@
                                     <div class="thumbnail">
                                         <span>По данному запросу ничего не найдено</span>
                                     </div>
-                                 </li>
-                               }
-                            </ul>
+                                </li>
+                            }
+                        </ul>
                         <hr class="soft" />
                         @{
                             var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
@@ -67,7 +69,7 @@
                            class="btn btn-default @prevDisabled">
                             Назад
                         </a>
-                        <a asp-action="Search"
+                        <a asp-action="Search" 
                            asp-route-pageNumber="@(Model.PageIndex + 1)"
                            asp-route-currentFilter="@ViewData["CurrentFilter"]"
                            class="btn btn-default @nextDisabled">
