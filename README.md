@@ -58,7 +58,8 @@
  ![image](https://user-images.githubusercontent.com/68823930/96578057-433bd880-12dd-11eb-88aa-e541efaadd16.png)
  
  ### 3. После добавления товара он отобразится на главной странице ###
- ![image](https://user-images.githubusercontent.com/68823930/96578300-a2015200-12dd-11eb-8074-977e41801d99.png)
+ ![image](https://user-images.githubusercontent.com/68823930/100987630-ce0c2600-355f-11eb-804b-6f08a84999a2.png)
+
  
  ### 4. На странице товара под описанием есть 3 кнопки для администратора ###
 ![image](https://user-images.githubusercontent.com/68823930/96578521-015f6200-12de-11eb-920c-7624aee7dfe0.png)
